@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hunchpublic/static/css/main.fdc5bbd0.css",
+    "main.js": "/hunchpublic/static/js/main.f87d89a4.js",
+    "index.html": "/hunchpublic/index.html",
+    "main.fdc5bbd0.css.map": "/hunchpublic/static/css/main.fdc5bbd0.css.map",
+    "main.f87d89a4.js.map": "/hunchpublic/static/js/main.f87d89a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fdc5bbd0.css",
+    "static/js/main.f87d89a4.js"
+  ]
+}
