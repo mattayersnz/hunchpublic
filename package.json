@@ -18,7 +18,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build", 
     "deploy": "gh-pages -d build"
-
   },
   "eslintConfig": {
     "extends": [
@@ -26,6 +25,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://<username>.github.io/hunchpublic",
   "browserslist": {
     "production": [
       ">0.2%",
