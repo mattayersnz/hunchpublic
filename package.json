@@ -25,7 +25,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://<username>.github.io/hunchpublic",
+  "homepage": "https://mattayersnz.github.io/hunchpublic",
   "browserslist": {
     "production": [
       ">0.2%",
