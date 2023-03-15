@@ -7,14 +7,13 @@ const HunchEditor = () => (
     <Heading>Welcome to Hunch</Heading>
 
     <Paragraph> 
-      Hunch is a note app built to help you form your hunches. 
+      Hunch is a note app built to help you form your thoughts. 
     </Paragraph>
     <Paragraph>
-      It has a minimalist, elegant design, where you can start to capture your thoughts. 
+      It has a minimalist, elegant design, where you can start to note what you are thinking about. 
     </Paragraph>
     <Paragraph>
-      Then hunch helps <HunchLink>stucture your thoughts</HunchLink> the way you like, 
-      share your ideas with others to <HunchLink> add perspectives </HunchLink> and <HunchLink> make decisions </HunchLink>.
+      Then you give your note <HunchLink>purpose</HunchLink> and get <HunchLink> contribution </HunchLink> forming your thoughts.
     </Paragraph>
 
     <Paragraph>
