@@ -10,10 +10,10 @@ const HunchEditor = () => (
       Hunch is a note app built to help you form your thoughts. 
     </Paragraph>
     <Paragraph>
-      It has a minimalist, elegant design, where you can start to note what you are thinking about. 
+      It has a minimalist, elegant design, where you can start to capture what you are thinking about. 
     </Paragraph>
     <Paragraph>
-      Then you give your note <HunchLink>purpose</HunchLink> and get <HunchLink> contribution </HunchLink> forming your thoughts.
+      Then you give your note <HunchLink>purpose</HunchLink> and <HunchLink> collaborate </HunchLink> with others.
     </Paragraph>
 
     <Paragraph>
