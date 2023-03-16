@@ -1,12 +1,33 @@
 import styled from 'styled-components';
 import HunchEditor from './HunchEditor';
+import Assistant from './Assistant';
+import Elements from './Elements';
+import { useState } from 'react';
 
 function App() {
+
+  const [page, setPage] = useState("welcome");
+
+  function getPage(page) {
+    switch (page) {
+      case 'welcome':
+        return <HunchEditor setPage={setPage}/>;
+      case 'assistant':
+        return <Assistant setPage={setPage}/>;
+      case 'elements':
+        return <Elements setPage={setPage}/>;
+      default:
+        return <HunchEditor setPage={setPage}/>;
+    }
+  }
+
+
+
   return (
     <Container>
       <HunchFrame>
         <ThreeDots />
-        <HunchEditor />
+        {getPage(page)}
       </HunchFrame>
     </Container>
   );
@@ -15,20 +36,22 @@ function App() {
 const Container = styled.div`
   height: 100%;
   width: 100%;
+  margin-top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const HunchFrame = styled.div`
-  height: 100%;
-  width: 75%;
+  height: 50%;
+  width: 60%;
   border: 1px solid #efefef;
   border-radius: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 15%;
   @media (max-width: 768px) {
     border: none;
   }
