@@ -14,19 +14,19 @@ const Assistant = ({setPage}) => {
     <Heading>Powerful Intelligence</Heading>
 
     <Paragraph> 
-    Inside Hunch you can chat with a virtual assistant to help you form your ideas.
+    Inside Hunch you can chat with an AI assistant powered by OpenAI to help you form your ideas.
     </Paragraph> 
 
     <Paragraph>
-    The assistant has the context of your current note, so you can instantly get it's views on the content of what you have written. This saves you constantly needing to add this context to your chat.
+    The assistant has the context of your current note which saves you constantly needing to add this context to your chat.
     </Paragraph>
 
     <Paragraph>
-    The strength of the assistant is that it can also use the vast array of views from people around world to help build on your thoughts.
+    The strength of this type of assistant is that it essentially taps into the aggregate views from people around world to help build on your thoughts.
     </Paragraph>
 
     <Paragraph>
-    <HunchLink onClick={welcome}>Hunch</HunchLink> is a powerful tool in this regard.
+    In this way <HunchLink onClick={welcome}>Hunch</HunchLink> instantly lets you start to get the views of others.
     </Paragraph>
     
   </AssistantContainer>

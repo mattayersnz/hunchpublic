@@ -60,7 +60,7 @@ const HunchEditor = ({setPage}) => {
     <Heading>Welcome to Hunch</Heading>
 
     <Paragraph> 
-    Hi, my name is Matt, and I'm the founder of Hunch, which a note app designed to help you form your ideas with the views of others.
+    Hi, my name is Matt, and I'm the founder of Hunch, which is a note app designed to help you form your ideas with the views of others.
     </Paragraph> 
 
     <Paragraph>
@@ -72,7 +72,7 @@ const HunchEditor = ({setPage}) => {
     </Paragraph>
 
     <Paragraph>
-    Hunch will be $US12/mth, so that I have the money to continue to enhance it. Please join the waitlist below and I'll get you setup.
+    Hunch will be $US12/mth so that I have the money to continue to enhance it. Please join the waitlist below and I'll get you setup.
     </Paragraph>
 
     <Form onSubmit={handleSubmit}>
