@@ -3,38 +3,45 @@ import HunchEditor from './HunchEditor';
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <HunchFrame>
         <ThreeDots />
         <HunchEditor />
       </HunchFrame>
-    </div>
+    </Container>
   );
 }
 
+const Container = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const HunchFrame = styled.div`
-  height: 75vh;
-  width: 75vw;
+  height: 100%;
+  width: 75%;
   border: 1px solid #efefef;
   border-radius: 10px;
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (max-width: 768px) {
-    height: 100vh;
-    width: 100vw;
     border: none;
-    margin-bottom: 50px;
   }
 `;
 
 const DotsContainer = styled.div`
-  position: relative;
+  position: absolute;
   top: 10px;
   left: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 40px;
-
   @media (max-width: 1080px) {
     display: none;
   }

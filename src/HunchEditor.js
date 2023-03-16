@@ -7,17 +7,19 @@ const HunchEditor = () => (
     <Heading>Welcome to Hunch</Heading>
 
     <Paragraph> 
-      Hunch is a note app built to help you form your thoughts. 
-    </Paragraph>
+    Hunch is a note app designed to help you form your ideas with the views of others
+    </Paragraph> 
+
     <Paragraph>
-      It has a minimalist, elegant design, where you can start to capture what you are thinking about. 
-    </Paragraph>
-    <Paragraph>
-      Then you give your note <HunchLink>purpose</HunchLink> and <HunchLink> collaborate </HunchLink> with others.
+    The <HunchLink>powerful intelligence</HunchLink> built into hunch will help build on your notes with the vast array of views from people around world
     </Paragraph>
 
     <Paragraph>
-      I'll shortly be opening up Hunch to the public.
+    You can also invite those you know to join you in forming your ideas, adding <HunchLink> note elements </HunchLink> like questions, decisions to be made, or tasks to complete to structure your conversations
+    </Paragraph>
+
+    <Paragraph>
+    Great ideas are formed from multiple views, join the waitlist below and follow your hunches.
     </Paragraph>
     
   </HunchEditorContainer>
@@ -25,16 +27,17 @@ const HunchEditor = () => (
 
 const HunchEditorContainer = styled.div`
   position: relative;
-  top: 15%;
-  left: 25%;
+  flex: 1;
   height: 80%;
   width: 50%;
-
+  padding-top: 5%;
+  padding-bottom: 5%;
   @media (max-width: 768px) {
+    position: static;
+    width: 100%;
+    max-width: 100%; 
+    padding: 0 20px;
     left: 20%;
-    width: 60%;
-    height: 100%;
-    padding-bottom: 100px;
   }
 `;
 
