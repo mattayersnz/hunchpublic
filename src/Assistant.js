@@ -18,7 +18,7 @@ const Assistant = ({setPage}) => {
     </Paragraph> 
 
     <Paragraph>
-    The assistant has the context of your current note which saves you constantly needing to add this context to your chat.
+    This assistant has the context of your current note which saves you constantly needing to add this context to your chat.
     </Paragraph>
 
     <Paragraph>
@@ -26,7 +26,11 @@ const Assistant = ({setPage}) => {
     </Paragraph>
 
     <Paragraph>
-    In this way <HunchLink onClick={welcome}>Hunch</HunchLink> instantly lets you start to get the views of others.
+    While this assistant isn't giving the view of another person who has bodied knowledge, grounded in the world, it is the beginning of some outside views for your thinking.
+    </Paragraph>
+
+    <Paragraph>
+    In this way <HunchLink onClick={welcome}>Hunch</HunchLink> instantly lets you start to get outside views on your ideas.
     </Paragraph>
     
   </AssistantContainer>
