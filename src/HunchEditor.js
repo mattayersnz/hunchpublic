@@ -21,8 +21,8 @@ const app = initializeApp(firebaseConfig);
 const HunchEditor = ({setPage}) => {
 
   // Change Pages
-  const assistant = () => {
-    setPage("assistant");
+  const different = () => {
+    setPage("different");
   }
 
   const elements = () => {
@@ -59,16 +59,16 @@ const HunchEditor = ({setPage}) => {
 
     <Heading>Welcome to Hunch</Heading>
 
-    <Paragraph> 
-    Hi, my name is Matt, and I'm the founder of Hunch, which is a note app designed to help you form your ideas with the views of others.
-    </Paragraph> 
+    <LeadParagraph> 
+    A note app for founders, designers and creators to get different views on your ideas.
+    </LeadParagraph> 
 
     <Paragraph>
-    The <HunchLink onClick={assistant}> Powerful Intelligence </HunchLink> built into hunch will help build on your notes with the vast array of views from people around world.
+    Ideas are important. It is popular today to focus on problems instead of ideas, but choosing which problem to focus on often involves take intuitive leaps from fragile ideas. A new idea can reveal a <HunchLink onClick={different}> Different Take </HunchLink> on a problem, leading to new directions.
     </Paragraph>
 
     <Paragraph>
-    You can also invite those you know to join you in forming your ideas, adding <HunchLink onClick={elements}> Note Elements </HunchLink> like questions, decisions to be made, or tasks to complete to structure your contributions.
+    The challenge with discussing ideas is that most of what we know we can't articulate. Our ideas come from observations, intuitions, emotions and experience. This is part of what makes us human and great at creating. Hunch helps you include some of these <HunchLink onClick={elements}> Elements of Knowing </HunchLink> as you collaborate with others.
     </Paragraph>
 
     <Paragraph>
@@ -76,7 +76,7 @@ const HunchEditor = ({setPage}) => {
     </Paragraph>
 
     <Form onSubmit={handleSubmit}>
-      <Input type="email" placeholder="Type your email here..." value={email} onChange={handleEmailChange} className="input"/>
+      <Input type="email" placeholder="Type your email here" value={email} onChange={handleEmailChange} className="input"/>
       <Button type="submit">Join Waitlist</Button>
     </Form>
     
@@ -113,6 +113,12 @@ const Paragraph = styled.div`
   padding-bottom: 21px;
 `;
 
+const LeadParagraph = styled.div`
+  line-height: 2;
+  padding-bottom: 21px;
+  font-weight: 500;
+`;
+
 
 const HunchLink = styled.div`
   padding: 1px 4px;
@@ -131,6 +137,7 @@ const Form = styled.form`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
 `;
 
 const Input = styled.input`
@@ -144,7 +151,8 @@ const Input = styled.input`
   background: transparent;
   color: #efefef;
   &::placeholder {
-    color: #4F4F4F; 
+    color: #efefef; 
+    font-weight: 300;
   }
 `;
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import HunchEditor from './HunchEditor';
-import Assistant from './Assistant';
+import Different from './Different';
 import Elements from './Elements';
 import { useState } from 'react';
 
@@ -12,8 +12,8 @@ function App() {
     switch (page) {
       case 'welcome':
         return <HunchEditor setPage={setPage}/>;
-      case 'assistant':
-        return <Assistant setPage={setPage}/>;
+      case 'different':
+        return <Different setPage={setPage}/>;
       case 'elements':
         return <Elements setPage={setPage}/>;
       default:
@@ -44,7 +44,7 @@ const Container = styled.div`
 
 const HunchFrame = styled.div`
   height: 50%;
-  width: 60%;
+  width: 70%;
   border: 1px solid #efefef;
   border-radius: 10px;
   position: relative;

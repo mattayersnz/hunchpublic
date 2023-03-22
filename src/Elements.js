@@ -11,22 +11,26 @@ const Elements = ({setPage}) => {
   return (
   <ElementsContainer>
 
-    <Heading>Note Elements</Heading>
-
-    <Paragraph> 
-    Often when you share a google doc or other collaborative note, they can quickly become messy and incoherent.
-    </Paragraph> 
+    <Heading>Elements of Knowing</Heading>
 
     <Paragraph>
-    With Hunch you can add little elements throughout your notes that help structure your conversations.
+    With Hunch you can add little elements throughout your notes that help give addition context about your ideas.
     </Paragraph>
 
     <Paragraph>
-    At the start of a new line you use the ":" syntax to add an element. For example, at the start of a new line you can type ":q" to add a question element, or ":d" to add a decision element.
+    Examples of these elements include: Unanswered questions, Different hunches you have, Decisions you want to make, and Criteria that you are holding in mind.
     </Paragraph>
 
     <Paragraph>
-    In this way <HunchLink onClick={welcome}>Hunch</HunchLink> gives you an easy way to add these elements and keep your notes structured.
+    These elements are importance context for those contributing your ideas. You can also create complete custom elements to add different types of context to your ideas.
+    </Paragraph>
+
+    <Paragraph>
+    Over time the app will have more types of elements to give context about your idea, and get other types of aspect from the contributions of others.
+    </Paragraph>
+
+    <Paragraph>
+    In this way <HunchLink onClick={welcome}>Hunch</HunchLink> gives you a way to provide more context to your ideas for better contribution from others.
     </Paragraph>
     
   </ElementsContainer>

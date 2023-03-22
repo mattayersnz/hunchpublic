@@ -7,30 +7,34 @@ const Assistant = ({setPage}) => {
   const welcome = () => {
     setPage("welcome");
   }
+
+  const elements = () => {
+    setPage("elements");
+  }
   
   return (
   <AssistantContainer>
 
-    <Heading>Powerful Intelligence</Heading>
+    <Heading>Different Take</Heading>
 
     <Paragraph> 
-    Inside Hunch you can chat with an AI assistant powered by OpenAI to help you form your ideas.
+    At the core of Hunch is the idea of that we need different takes on our thinking to make them robust and helpful to others.
     </Paragraph> 
 
     <Paragraph>
-    This assistant has the context of your current note which saves you constantly needing to add this context to your chat.
+    Getting stuck in our own ideas is a common trap. Modern advice is to put your ideas our to others to test them. Hold your ideas lightly and focus on what is actually needed.
     </Paragraph>
 
     <Paragraph>
-    The strength of this type of assistant is that it essentially taps into the aggregate views from people around world to help build on your thoughts.
+    This advice is good, but it not always easy to put your ideas out there, or even start a conversation purely about a problem that people face. 
     </Paragraph>
 
     <Paragraph>
-    While this assistant isn't giving the view of another person who has bodied knowledge, grounded in the world, it is the beginning of some outside views for your thinking.
+    In light of this the app makes it easy to share your notes with different <HunchLink onClick={elements}> Elements of Knowing </HunchLink> to get contributions for other people and AI contributors.
     </Paragraph>
 
     <Paragraph>
-    In this way <HunchLink onClick={welcome}>Hunch</HunchLink> instantly lets you start to get outside views on your ideas.
+    In <HunchLink onClick={welcome}>Hunch</HunchLink> your notes are structured as a network where you can link any note to any other, and redo your links when you want. So you can remap your ideas as they change.
     </Paragraph>
     
   </AssistantContainer>
