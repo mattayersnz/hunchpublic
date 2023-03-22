@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
 
-const Elements = ({setPage}) => {
-
-  const welcome = () => {
-    setPage("welcome");
-  }
+const Elements = () => {
   
   return (
   <ElementsContainer>
@@ -30,7 +27,7 @@ const Elements = ({setPage}) => {
     </Paragraph>
 
     <Paragraph>
-    In this way <HunchLink onClick={welcome}>Hunch</HunchLink> gives you a way to provide more context to your ideas for better contribution from others.
+    In this way <Link to="/"><HunchLink>Hunch</HunchLink></Link> gives you a way to provide more context to your ideas for better contribution from others.
     </Paragraph>
     
   </ElementsContainer>
@@ -77,6 +74,10 @@ const HunchLink = styled.div`
   text-decoration: inherit;
   white-space: normal;
   line-height: 1.5;
+`;
+
+const Link = styled(RouterLink)`
+  text-decoration: none;
 `;
 
 export default Elements;

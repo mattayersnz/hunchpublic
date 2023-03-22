@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { uid } from 'uid';
+import { Link as RouterLink } from 'react-router-dom';
 
 
 const firebaseConfig = {
@@ -18,17 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
-const HunchEditor = ({setPage}) => {
-
-  // Change Pages
-  const different = () => {
-    setPage("different");
-  }
-
-  const elements = () => {
-    setPage("elements");
-  }
-
+const Welcome = () => {
 
   // Capture Email Address
   const [email, setEmail] = useState('');
@@ -55,7 +46,7 @@ const HunchEditor = ({setPage}) => {
   
   
   return (
-  <HunchEditorContainer>
+  <WelcomeContainer>
 
     <Heading>Welcome to Hunch</Heading>
 
@@ -64,15 +55,15 @@ const HunchEditor = ({setPage}) => {
     </LeadParagraph> 
 
     <Paragraph>
-    Ideas are important. It is popular today to focus on problems instead of ideas, but choosing which problem to focus on often involves take intuitive leaps from fragile ideas. A new idea can reveal a <HunchLink onClick={different}> Different Take </HunchLink> on a problem, leading to new directions.
+    Ideas are important. It is popular today to focus on problems instead of ideas, but choosing which problem to focus on often involves take intuitive leaps from fragile ideas. A new idea can reveal a <Link to="/different"><HunchLink> Different Take </HunchLink></Link> on a problem, leading to new directions.
     </Paragraph>
 
     <Paragraph>
-    The challenge with discussing ideas is that most of what we know we can't articulate. Our ideas come from observations, intuitions, emotions and experience. This is part of what makes us human and great at creating. Hunch helps you include some of these <HunchLink onClick={elements}> Elements of Knowing </HunchLink> as you collaborate with others.
+    The challenge with discussing ideas is that most of what we know we can't articulate. Our ideas come from observations, intuitions, emotions and experience. This is part of what makes us human and great at creating. Hunch helps you include some of these <Link to="/elements"><HunchLink> Elements of Knowing </HunchLink></Link> as you collaborate with others.
     </Paragraph>
 
     <Paragraph>
-    Hunch will be $US12/mth so that I have the money to continue to enhance it. Please join the waitlist below and I'll get you setup.
+    Hunch is $US10/mth to use, so please join the waitlist below and I'll get you setup.
     </Paragraph>
 
     <Form onSubmit={handleSubmit}>
@@ -80,10 +71,10 @@ const HunchEditor = ({setPage}) => {
       <Button type="submit">Join Waitlist</Button>
     </Form>
     
-  </HunchEditorContainer>
+  </WelcomeContainer>
 )};
 
-const HunchEditorContainer = styled.div`
+const WelcomeContainer = styled.div`
   position: relative;
   height: 80%;
   width: 50%;
@@ -132,6 +123,10 @@ const HunchLink = styled.div`
   line-height: 1.5;
 `;
 
+const Link = styled(RouterLink)`
+  text-decoration: none;
+`;
+
 const Form = styled.form`
   display: flex;
   flex-direction: row;
@@ -169,4 +164,4 @@ const Button = styled.button`
   margin-left: 10px;
 `;
 
-export default HunchEditor;
+export default Welcome;

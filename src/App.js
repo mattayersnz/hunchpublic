@@ -1,37 +1,29 @@
 import styled from 'styled-components';
-import HunchEditor from './HunchEditor';
+import Welcome from './Welcome';
 import Different from './Different';
 import Elements from './Elements';
-import { useState } from 'react';
+import Signup from './Signup';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [page, setPage] = useState("welcome");
-
-  function getPage(page) {
-    switch (page) {
-      case 'welcome':
-        return <HunchEditor setPage={setPage}/>;
-      case 'different':
-        return <Different setPage={setPage}/>;
-      case 'elements':
-        return <Elements setPage={setPage}/>;
-      default:
-        return <HunchEditor setPage={setPage}/>;
-    }
-  }
-
-
-
   return (
-    <Container>
-      <HunchFrame>
-        <ThreeDots />
-        {getPage(page)}
-      </HunchFrame>
-    </Container>
+    <Router>
+      <Container>
+        <HunchFrame>
+          <ThreeDots />
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/different" element={<Different />} />
+            <Route path="/elements" element={<Elements />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </HunchFrame>
+      </Container>
+    </Router>
   );
 }
+
 
 const Container = styled.div`
   height: 100%;

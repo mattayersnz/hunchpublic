@@ -1,24 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
 
-const Assistant = ({setPage}) => {
 
-  const welcome = () => {
-    setPage("welcome");
-  }
-
-  const elements = () => {
-    setPage("elements");
-  }
+const Different = () => {
   
   return (
-  <AssistantContainer>
+  <DifferentContainer>
 
     <Heading>Different Take</Heading>
 
     <Paragraph> 
-    At the core of Hunch is the idea of that we need different takes on our thinking to make them robust and helpful to others.
+    At the core of Hunch is the belief that we need different takes on our ideas to make them robust and helpful to others.
     </Paragraph> 
 
     <Paragraph>
@@ -30,17 +24,17 @@ const Assistant = ({setPage}) => {
     </Paragraph>
 
     <Paragraph>
-    In light of this the app makes it easy to share your notes with different <HunchLink onClick={elements}> Elements of Knowing </HunchLink> to get contributions for other people and AI contributors.
+    In light of this the app makes it easy to share your notes with different <Link to="/elements"><HunchLink> Elements of Knowing </HunchLink></Link>to get contributions for other people and AI contributors.
     </Paragraph>
 
     <Paragraph>
-    In <HunchLink onClick={welcome}>Hunch</HunchLink> your notes are structured as a network where you can link any note to any other, and redo your links when you want. So you can remap your ideas as they change.
+    In <Link to="/"><HunchLink>Hunch</HunchLink></Link> your notes are structured as a network where you can link any note to any other, and redo your links when you want. So you can remap your ideas as they change.
     </Paragraph>
     
-  </AssistantContainer>
+  </DifferentContainer>
 )};
 
-const AssistantContainer = styled.div`
+const DifferentContainer = styled.div`
   position: relative;
   height: 80%;
   width: 50%;
@@ -83,4 +77,8 @@ const HunchLink = styled.div`
   line-height: 1.5;
 `;
 
-export default Assistant;
+const Link = styled(RouterLink)`
+  text-decoration: none;
+`;
+
+export default Different;
