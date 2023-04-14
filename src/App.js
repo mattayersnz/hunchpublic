@@ -179,7 +179,7 @@ const EmailInput = styled.input`
   border-radius: 5px;
   color: #EFEFEF;
   outline: none;
-  width: 40vw;
+  width: 30vw;
   &::placeholder {
     color: #4F4F4F;
   }
@@ -187,6 +187,7 @@ const EmailInput = styled.input`
 
 const JoinButton = styled.button`
   padding: 10px 15px;
+  font-weight: 600;
   margin-left: 10px;
   border-radius: 5px;
   font-size: 16px;
