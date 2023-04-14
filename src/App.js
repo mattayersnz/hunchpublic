@@ -1,91 +1,206 @@
+import React, { useState } from 'react';
+import './index.css';
+import { uid } from 'uid';
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 import styled from 'styled-components';
-import Welcome from './Welcome';
-import Different from './Different';
-import Elements from './Elements';
-import Signup from './Signup';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Links from './images/Links.png';
+import Blocks from './images/Blocks.png';
+import Share from './images/Share.png';
+import Graph from './images/Graph.png';
 
-function App() {
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDXupeVbSkHNU3_hCIkqOLYsItBcrnZK4g",
+  authDomain: "hunch-5e6b8.firebaseapp.com",
+  projectId: "hunch-5e6b8",
+  storageBucket: "hunch-5e6b8.appspot.com",
+  messagingSenderId: "872972959561",
+  appId: "1:872972959561:web:1a98ff9e501ab063b8a498",
+  measurementId: "G-NFTC2ZJ1Y9"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const App = () => {
+
+  // Component State
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const db = getFirestore(app);
+    const newId = uid();
+    const emailRef = doc(db, "waitlist", newId);
+
+    try {
+      await setDoc(emailRef, { id: newId, email: email }, { merge: true });
+      console.log("Email saved to Firestore!");
+    } catch (error) {
+      console.error("Error saving email to Firestore: ", error);
+    }
+    setEmail('');
+    setSubmitted(true);
+  };
 
   return (
-    <Router>
-      <Container>
-        <HunchFrame>
-          <ThreeDots />
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/different" element={<Different />} />
-            <Route path="/elements" element={<Elements />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </HunchFrame>
-      </Container>
-    </Router>
+    <Container>
+      <Hero>A note app for your hunches.</Hero>
+      <Questions>
+        <FirstQuestion>What do you do with a hunch? <br /> </FirstQuestion>
+        Write it down? <br />
+        Lose it somewhere? <br />
+      </Questions>
+      <Statement>
+        What if you put it in context?<br />
+        {/* Add your images here */}
+        <Image src={Links} alt="Screenshot of how links work in hunch" />
+      </Statement>
+      <Statement>
+        What if you got contribution from others?<br />
+        {/* Add your images here */}
+        <Image src={Share} alt="Screenshot of how to share a note in hunch" />
+      </Statement>
+      <Statement>
+        What if you progress it in a range of ways?<br />
+        {/* Add your images here */}
+        <Image src={Blocks} alt="Screenshot of how to progress a hunch with questions and actions" />
+      </Statement>
+      <Statement>
+        What if you could watch it form over time?<br />
+        {/* Add your images here */}
+        <Image src={Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
+      </Statement>
+      <Waitlist>
+        <Invite>Join the waitlist</Invite>
+        <form onSubmit={handleSubmit}>
+          <EmailInput
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+            placeholder="Your email"
+          />
+          <JoinButton type="submit">Join</JoinButton>
+        </form>
+        {submitted && <ThankYouMessage>Thanks, you are on the waitlist</ThankYouMessage>}
+      </Waitlist>
+    </Container>
   );
-}
-
+};
 
 const Container = styled.div`
-  height: 100%;
-  width: 100%;
-  margin-top: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  background-color: #212121;
+  color: #4F4F4F;
+  margin: 0;
 `;
 
-const HunchFrame = styled.div`
-  height: 50%;
-  width: 70%;
-  border: 1px solid #efefef;
+const Hero = styled.div`
+  font-size: 160px;
+  text-align: left;
+  padding-top: 30vh;
+  padding-left: 5vw;
+  padding-bottom: 40vh;
+  background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
+  -webkit-background-clip: text;
+  color: transparent;
+  @media (max-width: 960px) {
+    font-size: 80px;
+    padding-left: 10vw;
+  }
+`;
+
+const FirstQuestion = styled.div`
+  background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
+  -webkit-background-clip: text;
+  color: transparent;
+`;
+
+const Questions = styled.div`
+  font-size: 40px;
+  text-align: left;
+  padding-top: 100px;
+  padding-left: 10vw;
+  padding-bottom: 60vh;
+`;
+
+const Statement = styled.div`
+  font-size: 40px;
+  text-align: left;
+  padding-top: 100px;
+  padding-left: 10vw;
+  padding-bottom: 60vh;
+  background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
+  -webkit-background-clip: text;
+  color: transparent;
+`;
+
+
+const Image = styled.img`
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 60%;
+  height: auto;
+  border: 1px solid rgba(239, 239, 239, 0.3);
   border-radius: 10px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 15%;
-  @media (max-width: 768px) {
-    border: none;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
+`;
+
+
+
+
+const Waitlist = styled.div`
+  text-align: left;
+  font-size: 40px;
+  padding-top: 50vh;
+  padding-left: 10vw;
+  padding-bottom: 50vh;
+`;
+
+const Invite = styled.div`
+  background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
+  -webkit-background-clip: text;
+  color: transparent;
+`;
+
+const EmailInput = styled.input`
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #212121;
+  border-radius: 5px;
+  color: #EFEFEF;
+  outline: none;
+  width: 40vw;
+  &::placeholder {
+    color: #4F4F4F;
   }
 `;
 
-const DotsContainer = styled.div`
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 40px;
-  @media (max-width: 1080px) {
-    display: none;
-  }
+const JoinButton = styled.button`
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #EFEFEF;
+  color: #212121;
 `;
 
-const Dot = styled.div`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+const ThankYouMessage = styled.div`
+  font-size: 24px;
+  color: #4F4F4F;
+  background-color: transparent;
+  margin-top: 20px;
 `;
 
-const RedDot = styled(Dot)`
-  background-color: #ff5f57;
-`;
-
-const YellowDot = styled(Dot)`
-  background-color: #febc2e;
-`;
-
-const GreenDot = styled(Dot)`
-  background-color: #28c840;
-`;
-
-const ThreeDots = () => (
-  <DotsContainer>
-    <RedDot />
-    <YellowDot />
-    <GreenDot />
-  </DotsContainer>
-);
 
 export default App;
