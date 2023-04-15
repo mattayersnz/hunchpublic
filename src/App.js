@@ -119,6 +119,7 @@ const Hero = styled.div`
   @media (max-width: 960px) {
     font-size: 60px;
     padding-left: 10vw;
+    padding-top: 20vh;
   }
 `;
 
