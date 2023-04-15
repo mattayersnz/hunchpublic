@@ -8,7 +8,6 @@ import Links from './images/Links.png';
 import Blocks from './images/Blocks.png';
 import Share from './images/Share.png';
 import Graph from './images/Graph.png';
-import axios from 'axios';
 
 const firebaseConfig = {
   // Your Firebase configuration object
@@ -112,7 +111,7 @@ const Hero = styled.div`
   color: transparent;
   width: 80%;
   @media (max-width: 960px) {
-    font-size: 100px;
+    font-size: 60px;
     padding-left: 10vw;
   }
 `;
@@ -130,6 +129,10 @@ const Questions = styled.div`
   padding-left: 10vw;
   padding-bottom: 60vh;
   width: 80%;
+  @media (max-width: 960px) {
+    font-size: 40px;
+    padding-left: 10vw;
+  }
 `;
 
 const Statement = styled.div`
@@ -143,6 +146,7 @@ const Statement = styled.div`
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 960px) {
+    font-size: 40px;
     padding-left: 5vw;
     width: 90%;
   }
@@ -188,6 +192,7 @@ const Invite = styled.div`
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
+  font-size: 40px;
 `;
 
 const EmailInput = styled.input`
@@ -202,8 +207,8 @@ const EmailInput = styled.input`
     color: #4F4F4F;
   }
   @media (max-width: 960px) {
-    font-size: 24px;
-    width: 100%;
+    font-size: 16px;
+    width: 90%;
   }
 `;
 
@@ -218,7 +223,7 @@ const JoinButton = styled.button`
   color: #212121;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   @media (max-width: 960px) {
-    font-size: 24px;
+    font-size: 16px;
     margin-left: 0;
     margin-top: 10px;
     width: 30%;
