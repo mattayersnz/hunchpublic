@@ -8,16 +8,10 @@ import Links from './images/Links.png';
 import Blocks from './images/Blocks.png';
 import Share from './images/Share.png';
 import Graph from './images/Graph.png';
-
+import axios from 'axios';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDXupeVbSkHNU3_hCIkqOLYsItBcrnZK4g",
-  authDomain: "hunch-5e6b8.firebaseapp.com",
-  projectId: "hunch-5e6b8",
-  storageBucket: "hunch-5e6b8.appspot.com",
-  messagingSenderId: "872972959561",
-  appId: "1:872972959561:web:1a98ff9e501ab063b8a498",
-  measurementId: "G-NFTC2ZJ1Y9"
+  // Your Firebase configuration object
 };
 
 // Initialize Firebase
@@ -29,13 +23,10 @@ const App = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Save the email to Firestore
     const db = getFirestore(app);
     const newId = uid();
     const emailRef = doc(db, "waitlist", newId);
@@ -46,8 +37,13 @@ const App = () => {
     } catch (error) {
       console.error("Error saving email to Firestore: ", error);
     }
+
     setEmail('');
     setSubmitted(true);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
   return (
@@ -64,30 +60,32 @@ const App = () => {
         <Image src={Links} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
-        What if you got contribution from others?<br />
+        What if you got contributions?<br />
         {/* Add your images here */}
         <Image src={Share} alt="Screenshot of how to share a note in hunch" />
       </Statement>
       <Statement>
-        What if you progress it in a range of ways?<br />
+        What if you progress it?<br />
         {/* Add your images here */}
         <Image src={Blocks} alt="Screenshot of how to progress a hunch with questions and actions" />
       </Statement>
       <Statement>
-        What if you could watch it form over time?<br />
+        What if you had many hunches?<br />
         {/* Add your images here */}
         <Image src={Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
       </Statement>
       <Waitlist>
         <Invite>Join the waitlist</Invite>
         <form onSubmit={handleSubmit}>
-          <EmailInput
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            placeholder="Your email"
-          />
-          <JoinButton type="submit">Join</JoinButton>
+          <InputContainer>
+            <EmailInput
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+              placeholder="Your email"
+            />
+            <JoinButton type="submit">Join</JoinButton>
+          </InputContainer>
         </form>
         {submitted && <ThankYouMessage>Thanks, you are on the waitlist</ThankYouMessage>}
       </Waitlist>
@@ -112,8 +110,9 @@ const Hero = styled.div`
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
+  width: 80%;
   @media (max-width: 960px) {
-    font-size: 80px;
+    font-size: 100px;
     padding-left: 10vw;
   }
 `;
@@ -125,22 +124,28 @@ const FirstQuestion = styled.div`
 `;
 
 const Questions = styled.div`
-  font-size: 40px;
+  font-size: 60px;
   text-align: left;
   padding-top: 100px;
   padding-left: 10vw;
   padding-bottom: 60vh;
+  width: 80%;
 `;
 
 const Statement = styled.div`
-  font-size: 40px;
+  font-size: 60px;
   text-align: left;
   padding-top: 100px;
   padding-left: 10vw;
   padding-bottom: 60vh;
+  width: 80%;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
+  @media (max-width: 960px) {
+    padding-left: 5vw;
+    width: 90%;
+  }
 `;
 
 
@@ -148,22 +153,35 @@ const Image = styled.img`
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
-  max-width: 60%;
   height: auto;
+  width: 100%;
   border: 1px solid rgba(239, 239, 239, 0.3);
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
+  @media (max-width: 960px) {
+    border-radius: 3px;
+  }
 `;
-
-
 
 
 const Waitlist = styled.div`
   text-align: left;
-  font-size: 40px;
+  font-size: 60px;
   padding-top: 50vh;
   padding-left: 10vw;
   padding-bottom: 50vh;
+  width: 80%;
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 const Invite = styled.div`
@@ -183,6 +201,10 @@ const EmailInput = styled.input`
   &::placeholder {
     color: #4F4F4F;
   }
+  @media (max-width: 960px) {
+    font-size: 24px;
+    width: 100%;
+  }
 `;
 
 const JoinButton = styled.button`
@@ -194,7 +216,15 @@ const JoinButton = styled.button`
   cursor: pointer;
   background-color: #EFEFEF;
   color: #212121;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  @media (max-width: 960px) {
+    font-size: 24px;
+    margin-left: 0;
+    margin-top: 10px;
+    width: 30%;
+  }
 `;
+
 
 const ThankYouMessage = styled.div`
   font-size: 24px;
