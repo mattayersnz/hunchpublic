@@ -51,7 +51,7 @@ const App = () => {
       <Questions>
         <FirstQuestion>What do you do with a hunch? <br /> </FirstQuestion>
         Write it down? <br />
-        Lose it somewhere? <br />
+        Lose it? <br />
       </Questions>
       <Statement>
         What if you put it in context?<br />
