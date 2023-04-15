@@ -8,6 +8,10 @@ import Links from './images/Links.png';
 import Blocks from './images/Blocks.png';
 import Share from './images/Share.png';
 import Graph from './images/Graph.png';
+import LinksMobile from './images/LinksMobile.png';
+import BlocksMobile from './images/BlocksMobile.png';
+import ShareMobile from './images/ShareMobile.png';
+import GraphMobile from './images/GraphMobile.png';
 
 const firebaseConfig = {
   // Your Firebase configuration object
@@ -21,6 +25,8 @@ const App = () => {
   // Component State
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const isMobilePlatform = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,22 +62,22 @@ const App = () => {
       <Statement>
         What if you put it in context?<br />
         {/* Add your images here */}
-        <Image src={Links} alt="Screenshot of how links work in hunch" />
+        <Image src={isMobilePlatform ? LinksMobile : Links} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
         What if you got contributions?<br />
         {/* Add your images here */}
-        <Image src={Share} alt="Screenshot of how to share a note in hunch" />
+        <Image src={isMobilePlatform ? ShareMobile : Share} alt="Screenshot of how to share a note in hunch" />
       </Statement>
       <Statement>
         What if you progress it?<br />
         {/* Add your images here */}
-        <Image src={Blocks} alt="Screenshot of how to progress a hunch with questions and actions" />
+        <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how to progress a hunch with questions and actions" />
       </Statement>
       <Statement>
         What if you had many hunches?<br />
         {/* Add your images here */}
-        <Image src={Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
+        <Image src={isMobilePlatform ? GraphMobile : Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
       </Statement>
       <Waitlist>
         <Invite>Join the waitlist</Invite>
