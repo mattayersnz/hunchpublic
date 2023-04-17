@@ -14,7 +14,13 @@ import ShareMobile from './images/ShareMobile.png';
 import GraphMobile from './images/GraphMobile.png';
 
 const firebaseConfig = {
-  // Your Firebase configuration object
+  apiKey: "AIzaSyDXupeVbSkHNU3_hCIkqOLYsItBcrnZK4g",
+  authDomain: "hunch-5e6b8.firebaseapp.com",
+  projectId: "hunch-5e6b8",
+  storageBucket: "hunch-5e6b8.appspot.com",
+  messagingSenderId: "872972959561",
+  appId: "1:872972959561:web:1a98ff9e501ab063b8a498",
+  measurementId: "G-NFTC2ZJ1Y9"
 };
 
 // Initialize Firebase
@@ -26,7 +32,6 @@ const App = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const isMobilePlatform = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
