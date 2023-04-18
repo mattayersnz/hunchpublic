@@ -136,7 +136,7 @@ const Statement = styled.div`
 const Description = styled.div`
   font-size: 18px;
   font-weight: 200;
-  color: #4F4F4F;
+  color: #EFEFEF;
   background: none;
   padding-top: 14px;
   width: 80%;
