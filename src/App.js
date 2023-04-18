@@ -119,7 +119,7 @@ const Hero = styled.div`
 const Statement = styled.div`
   font-size: 60px;
   text-align: left;
-  padding-top: 100px;
+  padding-top: 200px;
   padding-left: 10vw;
   width: 80%;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
@@ -169,6 +169,7 @@ const Waitlist = styled.div`
   width: 80%;
   @media (max-width: 960px) {
     padding-top: 100px;
+    padding-left: 5vw;
   }
 `;
 
