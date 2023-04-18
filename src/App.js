@@ -63,7 +63,7 @@ const App = () => {
         <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
-        Keep an eye on the details
+        Stay focused on the important details
         <Description>
         As you get more notes, you can lose the important details in the noise. Here is a view in Hunch where you can see what notes contain the different elements you are interested in.
         </Description>
@@ -100,7 +100,7 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  font-size: 120px;
+  font-size: 100px;
   text-align: left;
   padding-top: 30vh;
   padding-left: 5vw;
@@ -110,14 +110,14 @@ const Hero = styled.div`
   color: transparent;
   width: 80%;
   @media (max-width: 960px) {
-    font-size: 42px;
+    font-size: 32px;
     padding-left: 10vw;
     padding-top: 20vh;
   }
 `;
 
 const Statement = styled.div`
-  font-size: 60px;
+  font-size: 40px;
   text-align: left;
   padding-top: 200px;
   padding-left: 10vw;
@@ -133,7 +133,7 @@ const Statement = styled.div`
 `;
 
 const Description = styled.div`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 200;
   color: #EFEFEF;
   background: none;
@@ -162,7 +162,7 @@ const Image = styled.img`
 
 const Waitlist = styled.div`
   text-align: left;
-  font-size: 60px;
+  font-size: 40px;
   padding-top: 200px;
   padding-left: 10vw;
   padding-bottom: 50vh;
@@ -188,7 +188,7 @@ const Invite = styled.div`
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 60px;
+  font-size: 40px;
   @media (max-width: 960px) {
     font-size: 24px;
   }
