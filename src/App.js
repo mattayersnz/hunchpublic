@@ -65,7 +65,7 @@ const App = () => {
       <Statement>
         Keep an eye on the details
         <Description>
-        As you get more notes, you can lose the important details in the noise. Here is a view in Hunch where you can see the most important details across your notes.
+        As you get more notes, you can lose the important details in the noise. Here is a view in Hunch where you can see what notes contain the different elements you are interested in.
         </Description>
         <Image src={isMobilePlatform ? GraphMobile : Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
       </Statement>
