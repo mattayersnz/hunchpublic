@@ -63,7 +63,7 @@ const App = () => {
         <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
-      Then see the bigger picture come together
+      See where the importants feature in your notes
         <Description>
         The graph view lets you see what notes have the different block types that you are interested in. So you and your team can be taking a lot of notes on a project, while still be able to see what is emerging.
         </Description>
@@ -72,7 +72,7 @@ const App = () => {
       <Waitlist>
         <Invite>Join the waitlist</Invite>
         <Description>
-          Hunch is currently in closed beta, but join the waitlist to get setup
+          Hunch is currently in closed beta, but join the waitlist to get access
         </Description>
         <form onSubmit={handleSubmit}>
           <InputContainer>
@@ -121,13 +121,12 @@ const Statement = styled.div`
   text-align: left;
   padding-top: 100px;
   padding-left: 10vw;
-  padding-bottom: 40vh;
   width: 80%;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 960px) {
-    font-size: 24px;
+    font-size: 28px;
     padding-left: 5vw;
     width: 90%;
   }
@@ -164,9 +163,13 @@ const Image = styled.img`
 const Waitlist = styled.div`
   text-align: left;
   font-size: 60px;
+  padding-top: 200px;
   padding-left: 10vw;
   padding-bottom: 50vh;
   width: 80%;
+  @media (max-width: 960px) {
+    padding-top: 100px;
+  }
 `;
 
 const InputContainer = styled.div`
@@ -184,7 +187,7 @@ const Invite = styled.div`
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 40px;
+  font-size: 60px;
   @media (max-width: 960px) {
     font-size: 24px;
   }
@@ -212,7 +215,7 @@ const JoinButton = styled.button`
   font-weight: 600;
   margin-left: 10px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   background-color: #EFEFEF;
   color: #212121;
