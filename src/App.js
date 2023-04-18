@@ -110,7 +110,7 @@ const Hero = styled.div`
   color: transparent;
   width: 80%;
   @media (max-width: 960px) {
-    font-size: 32px;
+    font-size: 48px;
     padding-left: 10vw;
     padding-top: 20vh;
   }
