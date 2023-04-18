@@ -63,7 +63,7 @@ const App = () => {
         <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
-      See where the important details feature in your notes
+        Visualise what is important
         <Description>
         The graph view lets you see what notes have the different block types that you are interested in. So you and your team can be taking a lot of notes on a project, while still be able to see what is emerging.
         </Description>
