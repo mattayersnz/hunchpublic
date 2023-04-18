@@ -58,14 +58,14 @@ const App = () => {
       <Statement>
         Notice the important details
         <Description>
-        When you are taking a lot of notes on a project, it is easy to lose the most important parts. Here is a view of a typical note in Hunch where you note: Questions, Tasks, Painpoints to solve, and many more.
+        When you are taking a lot of notes on a project, it is easy to lose the most important parts. Here is a view of a typical note in Hunch where you can add elements like: Questions, Tasks, Decisions to make, Painpoints to solve, and many more.
         </Description>
         <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
         Keep an eye on the details
         <Description>
-        As you get more notes, you can lose the important details in the noise. Here is a view in Hunch of where the most important details are across your notes.
+        As you get more notes, you can lose the important details in the noise. Here is a view in Hunch where you can see the most important details are across your notes.
         </Description>
         <Image src={isMobilePlatform ? GraphMobile : Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
       </Statement>
@@ -121,7 +121,7 @@ const Statement = styled.div`
   text-align: left;
   padding-top: 200px;
   padding-left: 10vw;
-  width: 80%;
+  width: 75%;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
