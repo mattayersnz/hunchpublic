@@ -58,12 +58,12 @@ const App = () => {
       <Statement>
         Hunch helps you notice the important details
         <Description>
-        Each new line in your notes is a block, and there are many different types of blocks that you can create and track over time: Questions you have, tasks to do, pain points to solve, and hunches to follow.
+        Here is a view of a typical note in Hunch. Each new line in the note is a block, and there are many different types of blocks that you can create: Questions, Tasks, Painpoints to solve, and many more.
         </Description>
         <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
-      See where the importants feature in your notes
+      See where the important details feature in your notes
         <Description>
         The graph view lets you see what notes have the different block types that you are interested in. So you and your team can be taking a lot of notes on a project, while still be able to see what is emerging.
         </Description>
