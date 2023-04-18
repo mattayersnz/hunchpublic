@@ -110,7 +110,7 @@ const Hero = styled.div`
   color: transparent;
   width: 80%;
   @media (max-width: 960px) {
-    font-size: 60px;
+    font-size: 42px;
     padding-left: 10vw;
     padding-top: 20vh;
   }
@@ -127,7 +127,7 @@ const Statement = styled.div`
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 960px) {
-    font-size: 40px;
+    font-size: 24px;
     padding-left: 5vw;
     width: 90%;
   }
@@ -185,6 +185,9 @@ const Invite = styled.div`
   -webkit-background-clip: text;
   color: transparent;
   font-size: 40px;
+  @media (max-width: 960px) {
+    font-size: 24px;
+  }
 `;
 
 const EmailInput = styled.input`
@@ -215,7 +218,7 @@ const JoinButton = styled.button`
   color: #212121;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   @media (max-width: 960px) {
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 0;
     margin-top: 10px;
     width: 30%;
