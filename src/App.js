@@ -4,13 +4,9 @@ import { uid } from 'uid';
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import styled from 'styled-components';
-import Links from './images/Links.png';
 import Blocks from './images/Blocks.png';
-import Share from './images/Share.png';
-import Graph from './images/Graph.png';
-import LinksMobile from './images/LinksMobile.png';
 import BlocksMobile from './images/BlocksMobile.png';
-import ShareMobile from './images/ShareMobile.png';
+import Graph from './images/Graph.png';
 import GraphMobile from './images/GraphMobile.png';
 
 const firebaseConfig = {
@@ -58,34 +54,26 @@ const App = () => {
 
   return (
     <Container>
-      <Hero>A note app for your hunches.</Hero>
-      <Questions>
-        <FirstQuestion>What do you do with a hunch? <br /> </FirstQuestion>
-        Write it down? <br />
-        Lose it? <br />
-      </Questions>
+      <Hero>A note app for designers, creators and innovators.</Hero>
       <Statement>
-        What if you put it in context?<br />
-        {/* Add your images here */}
-        <Image src={isMobilePlatform ? LinksMobile : Links} alt="Screenshot of how links work in hunch" />
+        Hunch helps you notice the important details
+        <Description>
+        Each new line in your notes is a block, and there are many different types of blocks that you can create and track over time: Questions you have, tasks to do, pain points to solve, and hunches to follow.
+        </Description>
+        <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
-        What if you got contributions?<br />
-        {/* Add your images here */}
-        <Image src={isMobilePlatform ? ShareMobile : Share} alt="Screenshot of how to share a note in hunch" />
-      </Statement>
-      <Statement>
-        What if you progress it?<br />
-        {/* Add your images here */}
-        <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how to progress a hunch with questions and actions" />
-      </Statement>
-      <Statement>
-        What if you had many hunches?<br />
-        {/* Add your images here */}
+      Then see the bigger picture come together
+        <Description>
+        The graph view lets you see what notes have the different block types that you are interested in. So you and your team can be taking a lot of notes on a project, while still be able to see what is emerging.
+        </Description>
         <Image src={isMobilePlatform ? GraphMobile : Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
       </Statement>
       <Waitlist>
         <Invite>Join the waitlist</Invite>
+        <Description>
+          Hunch is currently in closed beta, but join the waitlist to get setup
+        </Description>
         <form onSubmit={handleSubmit}>
           <InputContainer>
             <EmailInput
@@ -112,7 +100,7 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  font-size: 160px;
+  font-size: 120px;
   text-align: left;
   padding-top: 30vh;
   padding-left: 5vw;
@@ -128,31 +116,12 @@ const Hero = styled.div`
   }
 `;
 
-const FirstQuestion = styled.div`
-  background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
-  -webkit-background-clip: text;
-  color: transparent;
-`;
-
-const Questions = styled.div`
-  font-size: 60px;
-  text-align: left;
-  padding-top: 100px;
-  padding-left: 10vw;
-  padding-bottom: 60vh;
-  width: 80%;
-  @media (max-width: 960px) {
-    font-size: 40px;
-    padding-left: 10vw;
-  }
-`;
-
 const Statement = styled.div`
   font-size: 60px;
   text-align: left;
   padding-top: 100px;
   padding-left: 10vw;
-  padding-bottom: 60vh;
+  padding-bottom: 40vh;
   width: 80%;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
@@ -161,6 +130,18 @@ const Statement = styled.div`
     font-size: 40px;
     padding-left: 5vw;
     width: 90%;
+  }
+`;
+
+const Description = styled.div`
+  font-size: 18px;
+  font-weight: 200;
+  color: #4F4F4F;
+  background: none;
+  padding-top: 14px;
+  width: 80%;
+  @media (max-width: 960px) {
+    font-size: 14px;
   }
 `;
 
@@ -183,7 +164,6 @@ const Image = styled.img`
 const Waitlist = styled.div`
   text-align: left;
   font-size: 60px;
-  padding-top: 50vh;
   padding-left: 10vw;
   padding-bottom: 50vh;
   width: 80%;
