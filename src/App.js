@@ -58,14 +58,14 @@ const App = () => {
       <Statement>
         Notice the important details
         <Description>
-        Here is a view of a typical note in Hunch. Each new line in the note is a block, and there are many different types of blocks that you can create: Questions, Tasks, Painpoints to solve, and many more.
+        When you are taking a lot of notes on a project, it is easy to lose the most important parts. Here is a view of a typical note in Hunch where you note: Questions, Tasks, Painpoints to solve, and many more.
         </Description>
         <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
       </Statement>
       <Statement>
-        Keep track of what is important
+        Keep an eye on the details
         <Description>
-        The graph view lets you see what notes have the different block types that you are interested in. So you and your team can be taking a lot of notes on a project, while still be able to see what is emerging.
+        As you get more notes, you can lose the important details in the noise. Here is a view in Hunch of where the most important details are across your notes.
         </Description>
         <Image src={isMobilePlatform ? GraphMobile : Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
       </Statement>
