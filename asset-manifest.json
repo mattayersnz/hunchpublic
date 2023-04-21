@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.10693e93.css",
-    "main.js": "/static/js/main.12e93bc0.js",
+    "main.js": "/static/js/main.76c8b456.js",
     "static/media/NetworkMobile.png": "/static/media/NetworkMobile.4bafdea96799d8896144.png",
     "static/media/WelcomeMobile.png": "/static/media/WelcomeMobile.5ce75b453dc1bd75b917.png",
     "static/media/MarkersMobile.png": "/static/media/MarkersMobile.b7a38e20e7a30ad60b0f.png",
@@ -12,10 +12,10 @@
     "static/media/Contributions.png": "/static/media/Contributions.41dda471f6e79dcb24ac.png",
     "index.html": "/index.html",
     "main.10693e93.css.map": "/static/css/main.10693e93.css.map",
-    "main.12e93bc0.js.map": "/static/js/main.12e93bc0.js.map"
+    "main.76c8b456.js.map": "/static/js/main.76c8b456.js.map"
   },
   "entrypoints": [
     "static/css/main.10693e93.css",
-    "static/js/main.12e93bc0.js"
+    "static/js/main.76c8b456.js"
   ]
 }
