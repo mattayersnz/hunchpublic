@@ -1,17 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.10693e93.css",
-    "main.js": "/static/js/main.75ff787a.js",
-    "static/media/GraphMobile.png": "/static/media/GraphMobile.a021e1a948d09d26803d.png",
-    "static/media/BlocksMobile.png": "/static/media/BlocksMobile.ca99a18434a37e3228cd.png",
-    "static/media/Graph.png": "/static/media/Graph.7237d6fc9f29ae19a53a.png",
-    "static/media/Blocks.png": "/static/media/Blocks.e3688be80b6d110e03c2.png",
+    "main.js": "/static/js/main.b4735853.js",
+    "static/media/NetworkMobile.png": "/static/media/NetworkMobile.4bafdea96799d8896144.png",
+    "static/media/WelcomeMobile.png": "/static/media/WelcomeMobile.5ce75b453dc1bd75b917.png",
+    "static/media/MarkersMobile.png": "/static/media/MarkersMobile.b7a38e20e7a30ad60b0f.png",
+    "static/media/Network.png": "/static/media/Network.314ce7d43bf0a379a803.png",
+    "static/media/Welcome.png": "/static/media/Welcome.2898a55483c5917f6eea.png",
+    "static/media/ContributionsMobile.png": "/static/media/ContributionsMobile.1fcaa4a8485bbdae344e.png",
+    "static/media/Markers.png": "/static/media/Markers.cf359832b398c156a88f.png",
+    "static/media/Contributions.png": "/static/media/Contributions.41dda471f6e79dcb24ac.png",
     "index.html": "/index.html",
     "main.10693e93.css.map": "/static/css/main.10693e93.css.map",
-    "main.75ff787a.js.map": "/static/js/main.75ff787a.js.map"
+    "main.b4735853.js.map": "/static/js/main.b4735853.js.map"
   },
   "entrypoints": [
     "static/css/main.10693e93.css",
-    "static/js/main.75ff787a.js"
+    "static/js/main.b4735853.js"
   ]
 }
