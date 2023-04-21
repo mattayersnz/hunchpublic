@@ -186,7 +186,7 @@ const StatementWrapper = styled.div`
 
 
 const Statement = styled.div`
-  font-size: 48px; 
+  font-size: 36px; 
   text-align: left;
   width: 40%;
   margin-bottom: 20px;
@@ -201,7 +201,7 @@ const Statement = styled.div`
 
 
 const Description = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   color: #EFEFEF;
   background: none;
@@ -218,7 +218,7 @@ const Image = styled.img`
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 40%
+  width: 60%;
   border: 1px solid rgba(239, 239, 239, 0.3);
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -231,7 +231,7 @@ const Image = styled.img`
 
 const Waitlist = styled.div`
   text-align: left;
-  font-size: 48px;
+  font-size: 36px;
   padding-top: 200px;
   padding-left: 10vw;
   padding-bottom: 50vh;
@@ -256,7 +256,7 @@ const Invite = styled.div`
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 48px;
+  font-size: 36px;
   @media (max-width: 960px) {
     font-size: 24px;
   }
@@ -264,7 +264,7 @@ const Invite = styled.div`
 
 const EmailInput = styled.input`
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 16px;
   background-color: #212121;
   border-radius: 5px;
   color: #EFEFEF;
@@ -284,7 +284,7 @@ const JoinButton = styled.button`
   font-weight: 600;
   margin-left: 10px;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   background-color: #EFEFEF;
   color: #212121;
