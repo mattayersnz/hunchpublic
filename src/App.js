@@ -143,7 +143,7 @@ const HeroImage = styled.img`
   width: 80%;
   margin-left: 10vw;
   margin-bottom: 30vh;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #212121;
   border: 1px solid rgba(239, 239, 239, 0.3);
   @media (max-width: 960px) {
