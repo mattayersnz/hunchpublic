@@ -120,8 +120,8 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  font-size: 200px;
-  line-height: 0.9;
+  font-size: 180px;
+  line-height: 1;
   text-align: left;
   padding-top: 30vh;
   padding-left: 10vw;
