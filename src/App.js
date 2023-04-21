@@ -4,10 +4,14 @@ import { uid } from 'uid';
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import styled from 'styled-components';
-import Blocks from './images/Blocks.png';
-import BlocksMobile from './images/BlocksMobile.png';
-import Graph from './images/Graph.png';
-import GraphMobile from './images/GraphMobile.png';
+import Welcome from './images/Welcome.png';
+import WelcomeMobile from './images/WelcomeMobile.png';
+import Markers from './images/Markers.png';
+import MarkersMobile from './images/MarkersMobile.png';
+import Contributions from './images/Contributions.png';
+import ContributionsMobile from './images/ContributionsMobile.png';
+import Network from './images/Network.png';
+import NetworkMobile from './images/NetworkMobile.png';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXupeVbSkHNU3_hCIkqOLYsItBcrnZK4g",
@@ -54,21 +58,37 @@ const App = () => {
 
   return (
     <Container>
-      <Hero>A note app for designers, creators and innovators.</Hero>
-      <Statement>
-        Notice the important details
-        <Description>
-        When you are taking a lot of notes on a project, it is easy to lose the most important parts. Here is a view of a typical note in Hunch where you can add elements like: Questions, Tasks, Decisions to make, Painpoints to solve, and many more.
-        </Description>
-        <Image src={isMobilePlatform ? BlocksMobile : Blocks} alt="Screenshot of how links work in hunch" />
-      </Statement>
-      <Statement>
-        Stay focused on the important details
-        <Description>
-        As you get more notes, you can lose the important details in the noise. Here is a view in Hunch where you can see what notes contain the different elements you are interested in.
-        </Description>
-        <Image src={isMobilePlatform ? GraphMobile : Graph} alt="Screenshot of how to view all notes in hunch in a graph view" />
-      </Statement>
+      <Hero>A note app for creators.</Hero>
+      <HeroImage src={isMobilePlatform ? WelcomeMobile : Welcome} alt="Screenshot of how links work in hunch" />
+      <StatementsContainer>
+        <StatementWrapper>
+          <Statement>
+            Note Markers
+            <Description>
+              Highlight vital elements in your projects: problems to solve, questions, decisions to make, and more.
+            </Description>
+          </Statement>
+          <Image src={isMobilePlatform ? MarkersMobile : Markers} alt="Screenshot of how links work in hunch" />
+        </StatementWrapper>
+        <StatementWrapper>
+          <Statement>
+            Focused Collaboration
+            <Description>
+              Share your notes with refined controls, shaping better collaborations with specific types of contributions.
+            </Description>
+          </Statement>
+          <Image src={isMobilePlatform ? ContributionsMobile : Contributions} alt="Screenshot of how to view all notes in hunch in a graph view" />
+        </StatementWrapper>
+        <StatementWrapper>
+          <Statement>
+            Hunch Network
+            <Description>
+              Follow your hunches by creating and linking new notes about new ideas or challenges, while never losing sight of what is most important.
+            </Description>
+          </Statement>
+          <Image src={isMobilePlatform ? NetworkMobile : Network} alt="Screenshot of how to view all notes in hunch in a graph view" />
+        </StatementWrapper>
+      </StatementsContainer>
       <Waitlist>
         <Invite>Join the waitlist</Invite>
         <Description>
@@ -100,11 +120,12 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  font-size: 100px;
+  font-size: 200px;
+  line-height: 0.9;
   text-align: left;
   padding-top: 30vh;
-  padding-left: 5vw;
-  padding-bottom: 40vh;
+  padding-left: 10vw;
+  padding-bottom: 20vh;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
@@ -113,27 +134,74 @@ const Hero = styled.div`
     font-size: 48px;
     padding-left: 10vw;
     padding-top: 20vh;
+    padding-bottom: 30vh;
   }
 `;
 
-const Statement = styled.div`
-  font-size: 40px;
-  text-align: left;
-  padding-top: 200px;
+const HeroImage = styled.img`
+  display: block;
+  width: 80%;
+  margin-left: 10vw;
+  margin-bottom: 30vh;
+  border-radius: 20px;
+  background-color: #212121;
+  border: 1px solid rgba(239, 239, 239, 0.3);
+  @media (max-width: 960px) {
+    border-radius: 3px;
+  }
+`;
+
+const StatementsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 0px 10vw;
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+`;
+
+
+const StatementWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 30px;
   padding-left: 10vw;
-  width: 75%;
+  padding-right: 10vw;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    width: 80%;
+  }
+`;
+
+
+
+const Statement = styled.div`
+  font-size: 48px; 
+  text-align: left;
+  width: 40%;
+  margin-bottom: 20px;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 960px) {
-    font-size: 28px;
-    padding-left: 5vw;
+    font-size: 24px;
     width: 90%;
   }
 `;
 
+
 const Description = styled.div`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 200;
   color: #EFEFEF;
   background: none;
@@ -141,6 +209,7 @@ const Description = styled.div`
   width: 80%;
   @media (max-width: 960px) {
     font-size: 14px;
+    width: 100%;
   }
 `;
 
@@ -149,27 +218,26 @@ const Image = styled.img`
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
-  height: auto;
-  width: 100%;
+  width: 40%
   border: 1px solid rgba(239, 239, 239, 0.3);
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
   @media (max-width: 960px) {
-    border-radius: 3px;
+    width: 70vw;
   }
 `;
 
 
+
 const Waitlist = styled.div`
   text-align: left;
-  font-size: 40px;
+  font-size: 48px;
   padding-top: 200px;
   padding-left: 10vw;
   padding-bottom: 50vh;
   width: 80%;
   @media (max-width: 960px) {
     padding-top: 100px;
-    padding-left: 5vw;
   }
 `;
 
@@ -188,7 +256,7 @@ const Invite = styled.div`
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 40px;
+  font-size: 48px;
   @media (max-width: 960px) {
     font-size: 24px;
   }
@@ -196,7 +264,7 @@ const Invite = styled.div`
 
 const EmailInput = styled.input`
   padding: 10px 15px;
-  font-size: 16px;
+  font-size: 18px;
   background-color: #212121;
   border-radius: 5px;
   color: #EFEFEF;
