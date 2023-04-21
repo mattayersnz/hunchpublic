@@ -195,7 +195,7 @@ const Statement = styled.div`
   color: transparent;
   @media (max-width: 960px) {
     font-size: 24px;
-    width: 90%;
+    width: 100%;
   }
 `;
 
