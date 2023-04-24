@@ -72,9 +72,9 @@ const App = () => {
         </StatementWrapper>
         <StatementWrapper>
           <Statement>
-            Collaboration Focus
+            Smart Collaboration
             <Description>
-              Form better collaborations by focusing contributions on specific types of details.
+              Form better collaborations by focusing contributions on only specific types of note details.
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? ContributionsMobile : Contributions} alt="Screenshot of how to view all notes in hunch in a graph view" />
