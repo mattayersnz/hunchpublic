@@ -63,27 +63,27 @@ const App = () => {
       <StatementsContainer>
         <StatementWrapper>
           <Statement>
-            Note Markers
+            Note Details
             <Description>
-              Highlight vital elements in your projects: problems to solve, questions, decisions to make, and more.
+              Highlight important details in your notes including problems to solve, questions, decisions to make, and more.
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? MarkersMobile : Markers} alt="Screenshot of how links work in hunch" />
         </StatementWrapper>
         <StatementWrapper>
           <Statement>
-            Focused Collaboration
+            Collaboration Focus
             <Description>
-              Share your notes with refined controls, shaping better collaborations with specific types of contributions.
+              Form better collaborations by focusing contributions on specific types of details.
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? ContributionsMobile : Contributions} alt="Screenshot of how to view all notes in hunch in a graph view" />
         </StatementWrapper>
         <StatementWrapper>
           <Statement>
-            Hunch Network
+            Network View
             <Description>
-              Follow your hunches by creating and linking new notes about new ideas or challenges, while never losing sight of what is most important.
+              Never lose sight of what is most important as you create new notes about what you are creating.
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? NetworkMobile : Network} alt="Screenshot of how to view all notes in hunch in a graph view" />
