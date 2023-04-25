@@ -63,9 +63,9 @@ const App = () => {
       <StatementsContainer>
         <StatementWrapper>
           <Statement>
-            Note Details
+            Key Details
             <Description>
-              Highlight important details in your notes including problems to solve, questions, decisions to make, and more.
+              Highlight important details in your notes with different types of elements like: problems to solve, questions, decisions to make, and more.
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? MarkersMobile : Markers} alt="Screenshot of how links work in hunch" />
@@ -74,16 +74,16 @@ const App = () => {
           <Statement>
             Smart Collaboration
             <Description>
-              Form better collaborations by focusing contributions on only specific types of note details.
+              Setup better collaborations by setting contributions to allow only specific types of note elements like responses to questions.
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? ContributionsMobile : Contributions} alt="Screenshot of how to view all notes in hunch in a graph view" />
         </StatementWrapper>
         <StatementWrapper>
           <Statement>
-            Network View
+            Note Network
             <Description>
-              Never lose sight of what is most important as you create new notes about what you are creating.
+              Create and connect notes as you progress your thinking. Never lose sight of what is most important as you  view the different elements inside each note.
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? NetworkMobile : Network} alt="Screenshot of how to view all notes in hunch in a graph view" />
@@ -125,7 +125,7 @@ const Hero = styled.div`
   text-align: left;
   padding-top: 30vh;
   padding-left: 10vw;
-  padding-bottom: 20vh;
+  padding-bottom: 30vh;
   background: -webkit-linear-gradient(45deg, #6A27BF, #CC413B);
   -webkit-background-clip: text;
   color: transparent;
