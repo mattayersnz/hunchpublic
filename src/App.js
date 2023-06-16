@@ -8,8 +8,8 @@ import Welcome from './images/Welcome.png';
 import WelcomeMobile from './images/WelcomeMobile.png';
 import Markers from './images/Markers.png';
 import MarkersMobile from './images/MarkersMobile.png';
-import Contributions from './images/Contributions.png';
-import ContributionsMobile from './images/ContributionsMobile.png';
+import Hunch from './images/Hunch.png';
+import HunchMobile from './images/HunchMobile.png';
 import Network from './images/Network.png';
 import NetworkMobile from './images/NetworkMobile.png';
 
@@ -59,40 +59,40 @@ const App = () => {
   return (
     <Container>
       <Hero>A note app for creators.</Hero>
-      <HeroImage src={isMobilePlatform ? WelcomeMobile : Welcome} alt="Screenshot of how links work in hunch" />
+      <HeroImage src={isMobilePlatform ? WelcomeMobile : Welcome} alt="Screenshot of what hunch looks like" />
       <StatementsContainer>
         <StatementWrapper>
           <Statement>
             Key Details
             <Description>
-              Highlight important details in your notes with different types of elements like: problems to solve, questions, decisions to make, and more.
+              Highlight important details like problems to solve, questions, decisions to make, and more
             </Description>
           </Statement>
-          <Image src={isMobilePlatform ? MarkersMobile : Markers} alt="Screenshot of how links work in hunch" />
-        </StatementWrapper>
-        <StatementWrapper>
-          <Statement>
-            Smart Collaboration
-            <Description>
-              Setup better collaborations by setting contributions to allow only specific types of note elements like responses to questions.
-            </Description>
-          </Statement>
-          <Image src={isMobilePlatform ? ContributionsMobile : Contributions} alt="Screenshot of how to view all notes in hunch in a graph view" />
+          <Image src={isMobilePlatform ? MarkersMobile : Markers} alt="Screenshot of how to capture important details in hunch" />
         </StatementWrapper>
         <StatementWrapper>
           <Statement>
             Note Network
             <Description>
-              Create and connect notes as you progress your thinking. Never lose sight of what is most important as you  view the different elements inside each note.
+              Create and connect notes as you progress your thinking in the way that makes sense to you
             </Description>
           </Statement>
           <Image src={isMobilePlatform ? NetworkMobile : Network} alt="Screenshot of how to view all notes in hunch in a graph view" />
+        </StatementWrapper>
+        <StatementWrapper>
+          <Statement>
+            Follow Hunches
+            <Description>
+              Never lose your current hunches, but explore them with the help of others
+            </Description>
+          </Statement>
+          <Image src={isMobilePlatform ? HunchMobile : Hunch} alt="Screenshot of how to follow your hunches in the note app" />
         </StatementWrapper>
       </StatementsContainer>
       <Waitlist>
         <Invite>Join the waitlist</Invite>
         <Description>
-          Hunch is currently in closed beta, but join the waitlist to get access
+          Add your email below to join the hunch waitlist.
         </Description>
         <form onSubmit={handleSubmit}>
           <InputContainer>
@@ -173,7 +173,7 @@ const StatementWrapper = styled.div`
   padding-right: 10vw;
   padding-bottom: 20px;
   width: 100%;
-  background-color: #2c2c2c;
+  background-color: #292929;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
@@ -201,7 +201,7 @@ const Statement = styled.div`
 
 
 const Description = styled.div`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 200;
   color: #EFEFEF;
   background: none;
