@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <Container>
-      <Hero>A note app for creators.</Hero>
+      <Hero>A note app for the unknown.</Hero>
       <HeroImage src={isMobilePlatform ? WelcomeMobile : Welcome} alt="Screenshot of what hunch looks like" />
       <StatementsContainer>
         <StatementWrapper>
@@ -131,7 +131,7 @@ const Hero = styled.div`
   color: transparent;
   width: 80%;
   @media (max-width: 960px) {
-    font-size: 58px;
+    font-size: 48px;
     padding-left: 10vw;
     padding-top: 25vh;
     padding-bottom: 30vh;
@@ -201,8 +201,8 @@ const Statement = styled.div`
 
 
 const Description = styled.div`
-  font-size: 18px;
-  font-weight: 200;
+  font-size: 22px;
+  font-weight: 100;
   color: #EFEFEF;
   background: none;
   padding-top: 14px;
