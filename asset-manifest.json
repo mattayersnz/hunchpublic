@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.10693e93.css",
-    "main.js": "/static/js/main.c1c23a4c.js",
+    "main.js": "/static/js/main.d852de5a.js",
     "static/media/HunchMobile.png": "/static/media/HunchMobile.4500168e29c9bd1d8626.png",
     "static/media/NetworkMobile.png": "/static/media/NetworkMobile.e97c6f3901287d8f1e26.png",
     "static/media/Hunch.png": "/static/media/Hunch.734b4cb32107f0c61595.png",
@@ -12,10 +12,10 @@
     "static/media/Markers.png": "/static/media/Markers.47bb953279500ac66f44.png",
     "index.html": "/index.html",
     "main.10693e93.css.map": "/static/css/main.10693e93.css.map",
-    "main.c1c23a4c.js.map": "/static/js/main.c1c23a4c.js.map"
+    "main.d852de5a.js.map": "/static/js/main.d852de5a.js.map"
   },
   "entrypoints": [
     "static/css/main.10693e93.css",
-    "static/js/main.c1c23a4c.js"
+    "static/js/main.d852de5a.js"
   ]
 }
