@@ -120,7 +120,7 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  font-size: 180px;
+  font-size: 160px;
   line-height: 1;
   text-align: left;
   padding-top: 30vh;
