@@ -120,7 +120,7 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  font-size: 160px;
+  font-size: 155px;
   line-height: 1;
   text-align: left;
   padding-top: 30vh;
@@ -131,7 +131,7 @@ const Hero = styled.div`
   color: transparent;
   width: 80%;
   @media (max-width: 960px) {
-    font-size: 48px;
+    font-size: 50px;
     padding-left: 10vw;
     padding-top: 25vh;
     padding-bottom: 30vh;
