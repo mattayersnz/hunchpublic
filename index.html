@@ -32,25 +32,43 @@
             color: #efefef;
             text-decoration: none;
             font-size: 14px;
-            margin-top: 20px;
+            margin: 10px 0; /* Adjusted margin for better spacing */
             border: 1px solid #efefef;
-            padding: 5px 10px;
+            padding: 10px 20px; /* Increased padding for a larger button */
             border-radius: 4px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block; /* Ensures proper spacing and alignment */
         }
 
         a:hover {
             background-color: #efefef;
             color: #212121;
         }
+
+        /* Optional: Add some responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>hunch</h1>
-    <p>learn how to talk to customers and make something they want</p>
+    <p>Learn how to talk to customers and make something they want</p>
     <p>
         <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">
             Check it out on the App Store
+        </a>
+    </p>
+    <p>
+        <a href="mailto:your-email@example.com">
+            Get in Touch
         </a>
     </p>
 </body>
