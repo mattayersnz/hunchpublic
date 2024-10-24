@@ -28,19 +28,27 @@
             align-items: center;
             justify-content: center;
         }
-        a {
+
+        .buttons {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+            justify-content: center;
+        }
+
+        .buttons a {
             color: #efefef;
             text-decoration: none;
             font-size: 14px;
-            margin: 10px 0; /* Adjusted margin for better spacing */
             border: 1px solid #efefef;
-            padding: 10px 20px; /* Increased padding for a larger button */
+            padding: 10px 20px;
             border-radius: 4px;
             transition: background-color 0.3s ease, color 0.3s ease;
-            display: inline-block; /* Ensures proper spacing and alignment */
+            display: inline-block;
         }
 
-        a:hover {
+        .buttons a:hover {
             background-color: #efefef;
             color: #212121;
         }
@@ -51,7 +59,13 @@
                 padding: 20px;
             }
 
-            a {
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .buttons a {
                 width: 100%;
                 box-sizing: border-box;
             }
@@ -60,16 +74,14 @@
 </head>
 <body>
     <h1>hunch</h1>
-    <p>Learn how to talk to customers and make something they want</p>
-    <p>
+    <p>Learn how to talk to customers<br>and make something they want</p>
+    <div class="buttons">
         <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">
-            Check it out on the App Store
+            Check it out
         </a>
-    </p>
-    <p>
-        <a href="mailto:your-email@example.com">
+        <a href="mailto:your-email@example.com?subject=Hunch%20App%20Inquiry">
             Get in Touch
         </a>
-    </p>
+    </div>
 </body>
 </html>
