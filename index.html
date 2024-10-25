@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hunch - macOS app">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN for Bolt Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pKfZfQ0m+0VDvJxE4j0jE8t2Gf7h6R4hbKbkx3D9vYmkL+RnYjkGdH3/yEVQKcK7pPNYqxSk6fnZVbbhMk5T7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Updated Font Awesome CDN for Bolt Icon -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        referrerpolicy="no-referrer"
+    />
+    <!-- Fallback Font Awesome CDN -->
+    <script>
+        if (!document.querySelector('.fa-bolt')) {
+            var faLink = document.createElement('link');
+            faLink.rel = 'stylesheet';
+            faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+            faLink.referrerPolicy = 'no-referrer';
+            document.head.appendChild(faLink);
+        }
+    </script>
     <title>Hunch</title>
     <style>
         body {
@@ -37,7 +51,7 @@
         h1 i {
             margin-right: 10px;
             font-size: 36px;
-            color: #efefef; /* Updated color */
+            color: #efefef !important; /* Ensures color is applied */
         }
 
         p.subtitle {
@@ -134,7 +148,7 @@
     </style>
 </head>
 <body>
-    <h1><i class="fas fa-bolt"></i>hunch</h1>
+    <h1><i class="fa-solid fa-bolt"></i> hunch</h1>
     <p class="subtitle">Learn how to talk to customers and make something they want</p>
 
     <div class="screenshots">
