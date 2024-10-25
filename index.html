@@ -13,28 +13,67 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             background-color: #212121;
             color: #efefef;
             font-family: 'Roboto Mono', monospace;
-            font-size: 14px;
             text-align: center;
-            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        p.subtitle {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin: 10px 0 30px;
+        }
+
+        .screenshots {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .screenshots img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            max-width: 800px;
+            margin: 20px 0;
+        }
+
+        .features h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+            color: #b0b0b0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #3a3a3a;
         }
 
         .buttons {
             display: flex;
-            gap: 10px; /* Space between buttons */
-            margin-top: 20px;
-            flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
-            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .buttons a {
@@ -42,7 +81,7 @@
             text-decoration: none;
             font-size: 14px;
             border: 1px solid #efefef;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 4px;
             transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block;
@@ -53,10 +92,15 @@
             color: #212121;
         }
 
-        /* Optional: Add some responsiveness */
+        /* Responsive layout for smaller screens */
         @media (max-width: 600px) {
-            body {
-                padding: 20px;
+            .screenshots {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .screenshots img {
+                width: 90%;
             }
 
             .buttons {
@@ -74,14 +118,25 @@
 </head>
 <body>
     <h1>hunch</h1>
-    <p>Learn how to talk to customers<br>and make something they want</p>
+    <p class="subtitle">Learn how to talk to customers and make something they want</p>
+
+    <div class="screenshots">
+        <img src="screen1.png" alt="Screenshot of Hunch app screen 1">
+        <img src="screen2.png" alt="Screenshot of Hunch app screen 2">
+    </div>
+    <div class="features">
+        <h2>Key Features</h2>
+        <ul class="feature-list">
+            <li>Get in-context guidance on talking to customers</li>
+            <li>Create super tags from patterns about what customers say</li>
+            <li>Create and edit markdown docs to easily work with other tools</li>
+        </ul>
+    </div>
+
     <div class="buttons">
-        <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">
-            Check it out
-        </a>
-        <a href="mailto:your-email@example.com?subject=Hunch%20App%20Inquiry">
-            Get in Touch
-        </a>
+        <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
+        <a href="mailto:your-email@example.com?subject=Hunch%20App%20Inquiry">Get in Touch</a>
     </div>
 </body>
 </html>
+
