@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta and Title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunch Support</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN for Icons -->
     <link
@@ -26,8 +28,6 @@
             background-size: cover;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
             min-height: 100vh;
             padding: 40px 20px;
         }
@@ -46,7 +46,6 @@
             width: 100%;
             padding-left: 10%;
             padding-right: 10%;
-            text-align: left;
             position: relative;
             z-index: 1;
         }
@@ -74,10 +73,17 @@
             font-size: 16px;
         }
 
+        /* Form Container */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* Header */
         .header {
             margin-bottom: 32px;
             margin-top: 42px;
+            text-align: left;
         }
 
         .header .title {
@@ -95,7 +101,6 @@
 
         /* Support Form */
         .support-form {
-            width: 50%;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -198,8 +203,8 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .support-form {
-                width: 70%;
+            .form-container {
+                max-width: 80%;
             }
         }
 
@@ -219,11 +224,6 @@
 
             .header .subtitle {
                 font-size: 14px;
-            }
-
-            .support-form {
-                width: 100%;
-                padding: 15px;
             }
 
             .support-form button {
@@ -265,38 +265,42 @@
             <a href="index.html"><i class="fa-solid fa-chevron-left"></i> Back</a>
         </div>
 
-        <!-- Header -->
-        <div class="header">
-            <div class="title">
-                Hunch Support
+        <!-- Form Container -->
+        <div class="form-container">
+            <!-- Header -->
+            <div class="header">
+                <div class="title">
+                    Hunch Support
+                </div>
+                <div class="subtitle">
+                    We're here to help you make the most of Hunch
+                </div>
             </div>
-            <div class="subtitle">
-                We're here to help you make the most of Hunch
-            </div>
-        </div>
 
-        <!-- Support Form -->
-        <div class="support-form">
-            <form action="send_email.php" method="POST" id="supportForm">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your Name">
+            <!-- Support Form -->
+            <div class="support-form">
+                <form action="https://formspree.io/f/mgveozaw" method="POST" id="supportForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="Your Email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
 
-                <button type="submit">Send</button>
-            </form>
-            <<!-- Success Message -->
-            <div class="success-message" id="successMessage">
-                <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully.
-            </div>
-            
-            <!-- Error Message -->
-            <div class="error-message" id="errorMessage">
-                <i class="fa-solid fa-exclamation-circle"></i> Oops! There was a problem submitting your form.
+                    <button type="submit">Send</button>
+                </form>
+
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage">
+                    <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully.
+                </div>
+
+                <!-- Error Message -->
+                <div class="error-message" id="errorMessage">
+                    <i class="fa-solid fa-exclamation-circle"></i> Oops! There was a problem submitting your form.
+                </div>
             </div>
         </div>
     </div>
@@ -306,12 +310,12 @@
         const form = document.getElementById('supportForm');
         const successMessage = document.getElementById('successMessage');
         const errorMessage = document.getElementById('errorMessage');
-        
+
         form.addEventListener('submit', function(event) {
             event.preventDefault();
-        
+
             const formData = new FormData(form);
-        
+
             fetch(form.action, {
                 method: form.method,
                 body: formData,
@@ -321,22 +325,20 @@
             })
             .then(response => {
                 if (response.ok) {
-                    return response.text().then(text => {
-                        form.reset();
-                        successMessage.style.display = 'flex';
-                        errorMessage.style.display = 'none';
-                    });
+                    form.reset();
+                    successMessage.style.display = 'flex';
+                    errorMessage.style.display = 'none';
                 } else {
-                    return response.text().then(text => {
-                        successMessage.style.display = 'none';
+                    response.json().then(data => {
                         errorMessage.style.display = 'flex';
-                        console.error(text);
+                        successMessage.style.display = 'none';
+                        console.error(data);
                     });
                 }
             })
             .catch(error => {
-                successMessage.style.display = 'none';
                 errorMessage.style.display = 'flex';
+                successMessage.style.display = 'none';
                 console.error('Error:', error);
             });
         });
