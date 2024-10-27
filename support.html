@@ -19,17 +19,17 @@
         }
 
         body {
-            position: relative; /* Added position relative */
+            position: relative;
             font-family: 'Inter', sans-serif;
             color: #ffffff;
             background: url('mac_mockup.png') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align items to the left */
+            align-items: flex-start;
             justify-content: flex-start;
             min-height: 100vh;
-            padding: 40px 20px; /* Reduced horizontal padding for better responsiveness */
+            padding: 40px 20px;
         }
 
         .overlay {
@@ -38,16 +38,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Matching overlay from index.html */
+            background-color: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
 
         .content {
             width: 100%;
-            padding-left: 10%; /* Retained for larger screens */
+            padding-left: 10%;
             padding-right: 10%;
-            text-align: left; /* Align text to the left */
-            position: relative; /* Added position relative */
+            text-align: left;
+            position: relative;
             z-index: 1;
         }
 
@@ -81,25 +81,26 @@
         }
 
         .header .title {
-            font-size: 28px; /* Increased font size for better visibility */
+            font-size: 28px;
             color: #efefef;
             padding-bottom: 14px;
-            font-weight: 700; /* Heavier font weight */
+            font-weight: 700;
         }
 
         .header .subtitle {
-            font-size: 16px; /* Reduced font size */
-            font-weight: 400; /* Lighter font weight */
+            font-size: 16px;
+            font-weight: 400;
             color: #efefef;
         }
 
         /* Support Form */
         .support-form {
-            width: 50%; /* Set to 50% on large screens */
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            width: 50%;
+            background-color: rgba(0, 0, 0, 0.6);
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             margin-bottom: 30px;
+            padding: 20px;
         }
 
         .support-form form {
@@ -120,39 +121,57 @@
             border: 1px solid #b0b0b0;
             border-radius: 4px;
             font-size: 14px;
-            background-color: transparent; /* Removed grey background */
+            background-color: transparent;
             color: #efefef;
         }
 
         .support-form input::placeholder,
         .support-form textarea::placeholder {
-            color: #c0c0c0; /* Optional: Adjust placeholder color for better visibility */
+            color: #c0c0c0;
         }
 
         .support-form button {
-            padding: 7px 14px; 
+            padding: 10px 20px;
             border-radius: 4px;
-            background-color: #efefef; /* Changed background color */
-            border: 2px solid #efefef;
-            color: #212121; /* Changed text color */
+            background-color: #28a745;
+            border: none;
+            color: #ffffff;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            align-self: flex-start; /* Align button to the start */
+            align-self: flex-start;
             transition: background-color 0.3s, color 0.3s;
         }
 
         .support-form button:hover {
-            background-color: #d6d6d6; /* Slightly darker on hover */
-            color: #212121;
+            background-color: #218838;
         }
 
         /* Success Message */
         .success-message {
             display: none;
             margin-top: 20px;
-            color: #efefef;
+            padding: 15px 20px;
+            border: 1px solid #28a745;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
             font-size: 16px;
+            display: flex;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .success-message i {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #155724;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Responsive Design */
@@ -164,7 +183,7 @@
 
         @media (max-width: 768px) {
             body {
-                padding: 20px 10px; /* Adjust padding for smaller screens */
+                padding: 20px 10px;
             }
 
             .content {
@@ -181,13 +200,13 @@
             }
 
             .support-form {
-                width: 100%; /* Set to 90% on small screens */
+                width: 100%;
                 padding: 15px;
             }
 
             .support-form button {
                 width: auto;
-                align-self: center; /* Center the button on small screens */
+                align-self: center;
             }
         }
 
@@ -236,12 +255,12 @@
 
         <!-- Support Form -->
         <div class="support-form">
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="supportForm">
+            <form action="send_email.php" method="POST" id="supportForm">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required placeholder="Your Name">
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="_replyto" required placeholder="Your Email">
+                <input type="email" id="email" name="email" required placeholder="Your Email">
 
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
@@ -249,7 +268,10 @@
                 <button type="submit">Send</button>
             </form>
             <div class="success-message" id="successMessage">
-                Thank you! Your message has been sent successfully.
+                <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully.
+            </div>
+            <div class="error-message" id="errorMessage" style="display: none; margin-top: 20px; padding: 15px 20px; border: 1px solid #dc3545; background-color: #f8d7da; color: #721c24; border-radius: 5px; font-size: 16px; display: flex; align-items: center;">
+                <i class="fa-solid fa-exclamation-circle" style="margin-right: 10px; font-size: 20px; color: #721c24;"></i> Oops! There was a problem submitting your form.
             </div>
         </div>
     </div>
@@ -258,6 +280,7 @@
     <script>
         const form = document.getElementById('supportForm');
         const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -273,20 +296,23 @@
             })
             .then(response => {
                 if (response.ok) {
-                    form.reset();
-                    successMessage.style.display = 'block';
+                    return response.text().then(text => {
+                        form.reset();
+                        successMessage.style.display = 'flex';
+                        errorMessage.style.display = 'none';
+                    });
                 } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data.errors.map(error => error.message).join("\n"));
-                        } else {
-                            alert('Oops! There was a problem submitting your form.');
-                        }
+                    return response.text().then(text => {
+                        successMessage.style.display = 'none';
+                        errorMessage.style.display = 'flex';
+                        console.error(text);
                     });
                 }
             })
             .catch(error => {
-                alert('Oops! There was a problem submitting your form.');
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'flex';
+                console.error('Error:', error);
             });
         });
     </script>
