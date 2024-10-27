@@ -38,7 +38,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.3); /* Matching overlay from index.html */
+            background-color: rgba(0, 0, 0, 0.4); /* Matching overlay from index.html */
             z-index: 0;
         }
 
@@ -81,7 +81,8 @@
 
         .header .title {
             font-size: 24px;
-            color: #b0b0b0;
+            color: #efefef;
+            padding-bottom: 14px;
         }
 
         .header .subtitle {
@@ -91,19 +92,12 @@
 
         /* Support Form */
         .support-form {
-            width: 30%; /* Set to 30% on large screens */
+            width: 50%; /* Set to 30% on large screens */
             background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             margin-bottom: 30px;
-        }
-
-        .support-form h2 {
-            font-size: 32px; /* Adjusted font size to match index.html hero text */
-            margin-bottom: 20px;
-            color: #ffffff;
-            font-weight: 600; /* Increased font weight */
         }
 
         .support-form form {
@@ -201,7 +195,6 @@
 
         <!-- Support Form -->
         <div class="support-form">
-            <h2>Contact Support</h2>
             <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="supportForm">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
