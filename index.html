@@ -1,294 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- [Your existing head content remains unchanged] -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="Hunch - macOS app">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <!-- Updated Font Awesome CDN for Bolt Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for Icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-pVnZ6hZ+7DQI9t6eYbKzLKj1l1u2VdFTJkdbj8ogcS6r/KqWn6vMe1CqNuXVGhRb5xG3I4uJvzFjk+u3zj5cwA=="
+        crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
-    <!-- Fallback Font Awesome CDN -->
-    <script>
-        if (!document.querySelector('.fa-bolt')) {
-            var faLink = document.createElement('link');
-            faLink.rel = 'stylesheet';
-            faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-            faLink.referrerPolicy = 'no-referrer';
-            document.head.appendChild(faLink);
-        }
-    </script>
-    <title>Hunch Support</title>
+    <title>Hunch - macOS App</title>
     <style>
-        /* [Your existing styles remain unchanged up to this point] */
-        body {
+        /* Reset and Base Styles */
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Changed to flex-start for better layout */
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #212121;
-            color: #efefef;
-            font-family: 'Roboto Mono', monospace;
-            text-align: center;
-            padding: 40px;
             box-sizing: border-box;
         }
 
-        h1 {
-            font-size: 36px;
-            margin: 20px 0;
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            background: url('mac_mockup.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Overlay for better text visibility */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* Logo and Name */
+        .logo {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Bolt Icon Styling */
-        h1 i {
+        .logo i {
             margin-right: 10px;
-            font-size: 36px;
-            color: #efefef !important;
+            color: #ffcc00; /* Accent color for the icon */
         }
 
-        p.subtitle {
-            font-size: 18px;
-            color: #b0b0b0;
-            margin: 10px 0 30px;
-        }
-
-        /* Hero Image Styling */
-        .hero-image {
-            margin: 20px 0;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Key Statements Styling */
-        .key-statements {
+        /* Hero Statement */
+        .hero {
+            font-size: 32px;
+            margin-bottom: 20px;
             max-width: 800px;
-            margin: 20px 0;
+        }
+
+        /* Key Statements */
+        .key-statements {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 800px;
         }
 
         .key-statements p {
-            font-size: 20px;
-            color: #b0b0b0;
-            margin: 15px 0;
-        }
-
-        /* Support Section Styling */
-        .support-section {
-            max-width: 800px;
-            width: 100%;
-            margin: 40px 0;
-            text-align: left;
-        }
-
-        .support-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .support-section form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .support-section label {
-            margin-bottom: 5px;
-            font-size: 16px;
-            color: #ffffff;
-        }
-
-        .support-section input,
-        .support-section textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #b0b0b0;
-            border-radius: 4px;
-            font-size: 14px;
-            background-color: #2a2a2a;
-            color: #efefef;
-        }
-
-        .support-section button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            background-color: #efefef;
-            color: #212121;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .support-section button:hover {
-            background-color: #d4d4d4;
-        }
-
-        /* FAQ Section Styling */
-        .faq-section {
-            max-width: 800px;
-            width: 100%;
-            margin: 40px 0;
-            text-align: left;
-        }
-
-        .faq-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-        }
-
-        .faq-item h3 {
-            font-size: 20px;
-            color: #ffffff;
-            cursor: pointer;
-            position: relative;
-            padding-right: 20px;
-        }
-
-        .faq-item h3::after {
-            content: '\f078'; /* Font Awesome down arrow */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-
-        .faq-item.active h3::after {
-            content: '\f077'; /* Font Awesome up arrow */
-        }
-
-        .faq-item p {
-            display: none;
-            font-size: 16px;
-            color: #b0b0b0;
-            margin-top: 10px;
-        }
-
-        .faq-item.active p {
-            display: block;
+            margin: 10px 0;
         }
 
         /* Buttons */
         .buttons {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .buttons a {
-            color: #efefef;
+            background-color: #ffcc00;
+            color: #212121;
+            padding: 15px 30px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 14px;
-            border: 1px solid #efefef;
-            padding: 12px 24px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            display: inline-block;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
         }
 
         .buttons a:hover {
-            background-color: #efefef;
-            color: #212121;
+            background-color: #e6b800;
         }
 
-        /* Responsive layout for smaller screens */
-        @media (max-width: 600px) {
-            .buttons {
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                font-size: 24px;
             }
 
-            .buttons a {
-                width: 100%;
-                box-sizing: border-box;
+            .key-statements {
+                font-size: 16px;
             }
 
-            .support-section,
-            .faq-section {
-                padding: 0 10px;
+            .logo {
+                font-size: 36px;
             }
         }
     </style>
 </head>
 <body>
-    <h1><i class="fa-solid fa-bolt"></i> Hunch Support</h1>
-    <p class="subtitle">We're here to help you make the most of Hunch</p>
+    <div class="overlay"></div>
 
-    <!-- Support Section -->
-    <div class="support-section">
-        <h2>Contact Support</h2>
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+    <!-- Logo and Name -->
+    <div class="logo">
+        <i class="fa-solid fa-bolt"></i> Hunch
     </div>
 
-    <!-- FAQ Section -->
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
+    <!-- Hero Statement -->
+    <div class="hero">
+        Learn how to talk to customers and make something they want
+    </div>
 
-        <div class="faq-item">
-            <h3>How do I install Hunch on my Mac?</h3>
-            <p>Download the app from the Mac App Store, then follow the on-screen instructions to install it.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Can I sync Hunch across multiple devices?</h3>
-            <p>Yes, Hunch supports synchronization across all your devices using your iCloud account.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How do I reset my password?</h3>
-            <p>If you need to reset your password, go to the login page and click on "Forgot Password" to receive reset instructions via email.</p>
-        </div>
-
-        <!-- Add more FAQ items as needed -->
+    <!-- Key Statements -->
+    <div class="key-statements">
+        <p>In-context guidance for customer conversations</p>
+        <p>Identify patterns with super tags</p>
+        <p>Effortlessly integrate with your workflow using markdown docs</p>
     </div>
 
     <!-- Buttons -->
     <div class="buttons">
         <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
-        <a href="#top">Back to Top</a>
+        <a href="support.html">Support</a>
     </div>
-
-    <!-- JavaScript for FAQ Toggle -->
-    <script>
-        document.querySelectorAll('.faq-item h3').forEach(item => {
-            item.addEventListener('click', () => {
-                const parent = item.parentElement;
-                parent.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>
