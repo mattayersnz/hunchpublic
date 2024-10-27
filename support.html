@@ -157,15 +157,37 @@
             color: #155724;
             border-radius: 5px;
             font-size: 16px;
-            display: flex;
             align-items: center;
             animation: fadeIn 0.5s ease-in-out;
         }
-
-        .success-message i {
+        
+        /* Error Message */
+        .error-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px 20px;
+            border: 1px solid #dc3545;
+            background-color: #f8d7da;
+            color: #721c24;
+            border-radius: 5px;
+            font-size: 16px;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        /* Icon Styles */
+        .success-message i,
+        .error-message i {
             margin-right: 10px;
             font-size: 20px;
+        }
+        
+        .success-message i {
             color: #155724;
+        }
+        
+        .error-message i {
+            color: #721c24;
         }
 
         /* Fade-in Animation */
@@ -267,11 +289,14 @@
 
                 <button type="submit">Send</button>
             </form>
+            <<!-- Success Message -->
             <div class="success-message" id="successMessage">
                 <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully.
             </div>
-            <div class="error-message" id="errorMessage" style="display: none; margin-top: 20px; padding: 15px 20px; border: 1px solid #dc3545; background-color: #f8d7da; color: #721c24; border-radius: 5px; font-size: 16px; display: flex; align-items: center;">
-                <i class="fa-solid fa-exclamation-circle" style="margin-right: 10px; font-size: 20px; color: #721c24;"></i> Oops! There was a problem submitting your form.
+            
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage">
+                <i class="fa-solid fa-exclamation-circle"></i> Oops! There was a problem submitting your form.
             </div>
         </div>
     </div>
