@@ -9,9 +9,6 @@
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-pVnZ6hZ+7DQI9t6eYbKzLKj1l1u2VdFTJkdbj8ogcS6r/KqWn6vMe1CqNuXVGhRb5xG3I4uJvzFjk+u3zj5cwA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
     />
     <style>
         /* Reset and Base Styles */
@@ -22,9 +19,11 @@
         }
 
         body {
+            position: relative; /* Added position relative */
             font-family: 'Inter', sans-serif;
             color: #ffffff;
-            background-color: #212121;
+            background: url('mac_mockup.png') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             align-items: flex-start; /* Align items to the left */
@@ -33,11 +32,23 @@
             padding: 40px 0;
         }
 
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Matching overlay from index.html */
+            z-index: 0;
+        }
+
         .content {
             width: 100%;
             padding-left: 10%; /* Added 10% left padding */
             padding-right: 10%;
             text-align: left; /* Align text to the left */
+            position: relative; /* Added position relative */
+            z-index: 1;
         }
 
         /* Back Button */
@@ -50,10 +61,17 @@
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
+            display: flex;
+            align-items: center;
         }
 
         .back-button a:hover {
             text-decoration: underline;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+            font-size: 16px;
         }
 
         /* Header */
@@ -82,8 +100,8 @@
 
         /* Support Form */
         .support-form {
-            width: 100%;
-            background-color: #2a2a2a;
+            width: 30%; /* Set to 30% on large screens */
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -91,7 +109,7 @@
         }
 
         .support-form h2 {
-            font-size: 24px;
+            font-size: 32px; /* Adjusted font size to match index.html hero text */
             margin-bottom: 20px;
             color: #ffffff;
             font-weight: 600; /* Increased font weight */
@@ -146,6 +164,12 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .support-form {
+                width: 50%;
+            }
+        }
+
         @media (max-width: 768px) {
             .header .logo {
                 font-size: 16px;
@@ -156,16 +180,21 @@
             }
 
             .support-form h2 {
-                font-size: 20px;
+                font-size: 24px;
+            }
+
+            .support-form {
+                width: 90%; /* Set to 90% on small screens */
             }
         }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="content">
         <!-- Back Button -->
         <div class="back-button">
-            <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+            <a href="index.html"><i class="fa-solid fa-chevron-left"></i> Back</a>
         </div>
 
         <!-- Header -->
