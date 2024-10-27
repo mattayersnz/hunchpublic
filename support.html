@@ -27,32 +27,52 @@
             background-color: #212121;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start; /* Align items to the left */
             justify-content: flex-start;
             min-height: 100vh;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 40px 0;
+        }
+
+        .content {
+            width: 100%;
+            padding-left: 10%; /* Added 10% left padding */
+            padding-right: 10%;
+            text-align: left; /* Align text to the left */
+        }
+
+        /* Back Button */
+        .back-button {
+            margin-bottom: 20px;
+        }
+
+        .back-button a {
+            color: #efefef;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .back-button a:hover {
+            text-decoration: underline;
         }
 
         /* Header */
         .header {
-            width: 100%;
-            max-width: 800px;
             margin-bottom: 40px;
         }
 
         .header .logo {
-            font-size: 36px;
+            font-size: 16px; /* Aligned font size with index style */
             font-weight: 600;
             display: flex;
             align-items: center;
-            justify-content: center;
             margin-bottom: 10px;
         }
 
         .header .logo i {
             margin-right: 10px;
-            color: #ffcc00;
+            color: #efefef; /* Changed icon color to #efefef */
+            font-size: 16px; /* Adjusted icon size */
         }
 
         .header .subtitle {
@@ -63,27 +83,26 @@
         /* Support Form */
         .support-form {
             width: 100%;
-            max-width: 600px;
             background-color: #2a2a2a;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
         }
 
         .support-form h2 {
             font-size: 24px;
             margin-bottom: 20px;
             color: #ffffff;
+            font-weight: 600; /* Increased font weight */
         }
 
         .support-form form {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
         }
 
         .support-form label {
-            text-align: left;
             margin-bottom: 5px;
             font-size: 16px;
             color: #ffffff;
@@ -108,35 +127,12 @@
             background-color: #6A27BF;
             color: #efefef;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .support-form button:hover {
-            background-color: #efefef;
-        }
-
-        /* Footer Buttons */
-        .footer-buttons {
-            margin-top: 30px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-buttons a {
-            background-color: none;
-            color: #efefef;
-            border: 2px solid #efefef;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .footer-buttons a:hover {
             background-color: #efefef;
             color: #212121;
         }
@@ -152,15 +148,11 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .header .logo {
-                font-size: 28px;
+                font-size: 16px;
             }
 
             .header .subtitle {
                 font-size: 16px;
-            }
-
-            .support-form {
-                padding: 20px;
             }
 
             .support-form h2 {
@@ -170,40 +162,41 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <div class="logo">
-            <i class="fa-solid fa-bolt"></i> Hunch Support
+    <div class="content">
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
         </div>
-        <div class="subtitle">
-            We're here to help you make the most of Hunch
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <i class="fa-solid fa-bolt"></i> Hunch Support
+            </div>
+            <div class="subtitle">
+                We're here to help you make the most of Hunch
+            </div>
         </div>
-    </div>
 
-    <!-- Support Form -->
-    <div class="support-form">
-        <h2>Contact Support</h2>
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="supportForm">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+        <!-- Support Form -->
+        <div class="support-form">
+            <h2>Contact Support</h2>
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="supportForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="_replyto" required>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit">Submit</button>
-        </form>
-        <div class="success-message" id="successMessage">
-            Thank you! Your message has been sent successfully.
+                <button type="submit">Submit</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                Thank you! Your message has been sent successfully.
+            </div>
         </div>
-    </div>
-
-    <!-- Footer Buttons -->
-    <div class="footer-buttons">
-        <a href="index.html">Home</a>
-        <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
     </div>
 
     <!-- JavaScript for Form Submission -->
