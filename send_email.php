@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Replace with your email address
-    $to = "your-email@example.com";
+    $to = "matt@hunch.tech";
     
     // Collect and sanitize form data
     $name = strip_tags(trim($_POST["name"]));
