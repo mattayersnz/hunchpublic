@@ -79,18 +79,9 @@
             margin-bottom: 40px;
         }
 
-        .header .logo {
-            font-size: 16px; /* Aligned font size with index style */
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .header .logo i {
-            margin-right: 10px;
-            color: #efefef; /* Changed icon color to #efefef */
-            font-size: 16px; /* Adjusted icon size */
+        .header .title {
+            font-size: 24px;
+            color: #b0b0b0;
         }
 
         .header .subtitle {
@@ -142,7 +133,8 @@
             padding: 12px;
             border: none;
             border-radius: 4px;
-            background-color: #6A27BF;
+            background-color: none;
+            border: 2px solid #efefef;
             color: #efefef;
             font-size: 16px;
             font-weight: 600;
@@ -159,14 +151,14 @@
         .success-message {
             display: none;
             margin-top: 20px;
-            color: #00ff00;
+            color: #efefef;
             font-size: 16px;
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
             .support-form {
-                width: 50%;
+                width: 70%;
             }
         }
 
@@ -199,8 +191,8 @@
 
         <!-- Header -->
         <div class="header">
-            <div class="logo">
-                <i class="fa-solid fa-bolt"></i> Hunch Support
+            <div class="title">
+                Hunch Support
             </div>
             <div class="subtitle">
                 We're here to help you make the most of Hunch
@@ -220,7 +212,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Send</button>
             </form>
             <div class="success-message" id="successMessage">
                 Thank you! Your message has been sent successfully.
