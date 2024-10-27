@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunch Support</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN for Icons -->
+    <meta description="Hunch - macOS app">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Updated Font Awesome CDN for Icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <title>Hunch - macOS App</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -19,7 +20,7 @@
         }
 
         body {
-            position: relative;
+            position: relative; /* Added position relative */
             font-family: 'Inter', sans-serif;
             color: #ffffff;
             background: url('mac_mockup.png') no-repeat center center fixed;
@@ -27,294 +28,139 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: flex-start;
+            justify-content: center;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 20px 0;
         }
 
+        .content {
+            padding-left: 10%;
+            text-align: left;
+            position: relative; /* Added position relative */
+            z-index: 1; /* Added z-index */
+        }
+
+        /* Overlay for better text visibility */
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Reduced opacity */
+            z-index: 0; /* Set z-index to 0 */
         }
 
-        .content {
-            width: 100%;
-            padding-left: 10%;
-            padding-right: 10%;
-            text-align: left;
-            position: relative;
-            z-index: 1;
+        /* Logo and Name */
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
         }
 
-        /* Back Button */
-        .back-button {
-            margin-bottom: 20px;
-        }
-
-        .back-button a {
+        .logo i {
+            margin-right: 4px;
             color: #efefef;
+            font-size: 13px;
+        }
+
+        /* Hero Statement */
+        .hero {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px; 
+            max-width: 800px;
+        }
+
+        /* Key Statements */
+        .key-statements {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 52px;
+            max-width: 800px;
+        }
+
+        .key-statements p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .key-statements i {
+            margin-right: 14px;
+            color: #efefef;
+            font-size: 18px;
+            width: 24px; /* Fixed width for alignment */
+            text-align: center; /* Center the icon within the fixed width */
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .buttons a {
+            background-color: none;
+            color: #efefef;
+            border: 2px solid #efefef;
+            padding: 15px 30px;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 16px;
             font-weight: 600;
-            display: flex;
-            align-items: center;
+            transition: background-color 0.3s ease;
         }
 
-        .back-button a:hover {
-            text-decoration: underline;
-        }
-
-        .back-button i {
-            margin-right: 8px;
-            font-size: 16px;
-        }
-
-        /* Header */
-        .header {
-            margin-bottom: 32px;
-            margin-top: 42px;
-        }
-
-        .header .title {
-            font-size: 28px;
-            color: #efefef;
-            padding-bottom: 14px;
-            font-weight: 700;
-        }
-
-        .header .subtitle {
-            font-size: 16px;
-            font-weight: 400;
-            color: #efefef;
-        }
-
-        /* Support Form */
-        .support-form {
-            width: 50%;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            margin-bottom: 30px;
-            padding: 20px;
-        }
-
-        .support-form form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .support-form label {
-            margin-bottom: 5px;
-            font-size: 16px;
-            color: #ffffff;
-        }
-
-        .support-form input,
-        .support-form textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #b0b0b0;
-            border-radius: 4px;
-            font-size: 14px;
-            background-color: transparent;
-            color: #efefef;
-        }
-
-        .support-form input::placeholder,
-        .support-form textarea::placeholder {
-            color: #c0c0c0;
-        }
-
-        .support-form button {
-            padding: 10px 20px;
-            border-radius: 4px;
-            background-color: #28a745;
-            border: none;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            align-self: flex-start;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .support-form button:hover {
-            background-color: #218838;
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            margin-top: 20px;
-            padding: 15px 20px;
-            border: 1px solid #28a745;
-            background-color: #d4edda;
-            color: #155724;
-            border-radius: 5px;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .success-message i {
-            margin-right: 10px;
-            font-size: 20px;
-            color: #155724;
-        }
-
-        /* Fade-in Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .buttons a:hover {
+            background-color: #efefef;
+            color: #212121;
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .support-form {
-                width: 70%;
-            }
-        }
-
         @media (max-width: 768px) {
-            body {
-                padding: 20px 10px;
-            }
-
-            .content {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
-
-            .header .title {
+            .hero {
                 font-size: 24px;
             }
 
-            .header .subtitle {
-                font-size: 14px;
+            .key-statements {
+                font-size: 16px;
             }
 
-            .support-form {
-                width: 100%;
-                padding: 15px;
-            }
-
-            .support-form button {
-                width: auto;
-                align-self: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header .title {
-                font-size: 20px;
-            }
-
-            .header .subtitle {
-                font-size: 13px;
-            }
-
-            .support-form label {
-                font-size: 14px;
-            }
-
-            .support-form input,
-            .support-form textarea {
-                font-size: 13px;
-            }
-
-            .support-form button {
-                font-size: 14px;
-                padding: 10px 16px;
+            .logo {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
+
     <div class="content">
-        <!-- Back Button -->
-        <div class="back-button">
-            <a href="index.html"><i class="fa-solid fa-chevron-left"></i> Back</a>
+        <!-- Logo and Name -->
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i> hunch
         </div>
 
-        <!-- Header -->
-        <div class="header">
-            <div class="title">
-                Hunch Support
-            </div>
-            <div class="subtitle">
-                We're here to help you make the most of Hunch
-            </div>
+        <!-- Hero Statement -->
+        <div class="hero">
+            Learn how to talk to customers and make something they want
         </div>
 
-        <!-- Support Form -->
-        <div class="support-form">
-            <form action="send_email.php" method="POST" id="supportForm">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your Name">
+        <!-- Key Statements -->
+        <div class="key-statements">
+            <p><i class="fa-solid fa-lightbulb"></i> In-context guidance for customer conversations</p>
+            <p><i class="fa-solid fa-tag"></i> Identify patterns with super tags</p>
+            <p><i class="fa-solid fa-code"></i> Effortlessly integrate with your workflow using markdown docs</p>
+        </div>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="Your Email">
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
-
-                <button type="submit">Send</button>
-            </form>
-            <div class="success-message" id="successMessage">
-                <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully.
-            </div>
-            <div class="error-message" id="errorMessage" style="display: none; margin-top: 20px; padding: 15px 20px; border: 1px solid #dc3545; background-color: #f8d7da; color: #721c24; border-radius: 5px; font-size: 16px; display: flex; align-items: center;">
-                <i class="fa-solid fa-exclamation-circle" style="margin-right: 10px; font-size: 20px; color: #721c24;"></i> Oops! There was a problem submitting your form.
-            </div>
+        <!-- Buttons -->
+        <div class="buttons">
+            <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
+            <a href="support.html">Support</a>
         </div>
     </div>
-
-    <!-- JavaScript for Form Submission -->
-    <script>
-        const form = document.getElementById('supportForm');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const formData = new FormData(form);
-
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.text().then(text => {
-                        form.reset();
-                        successMessage.style.display = 'flex';
-                        errorMessage.style.display = 'none';
-                    });
-                } else {
-                    return response.text().then(text => {
-                        successMessage.style.display = 'none';
-                        errorMessage.style.display = 'flex';
-                        console.error(text);
-                    });
-                }
-            })
-            .catch(error => {
-                successMessage.style.display = 'none';
-                errorMessage.style.display = 'flex';
-                console.error('Error:', error);
-            });
-        });
-    </script>
 </body>
 </html>
