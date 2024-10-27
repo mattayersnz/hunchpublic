@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="Hunch - macOS app">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN for Icons -->
+    <!-- Updated Font Awesome CDN for Icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-pVnZ6hZ+7DQI9t6eYbKzLKj1l1u2VdFTJkdbj8ogcS6r/KqWn6vMe1CqNuXVGhRb5xG3I4uJvzFjk+u3zj5cwA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
     />
     <title>Hunch - macOS App</title>
     <style>
@@ -23,21 +20,24 @@
         }
 
         body {
+            position: relative; /* Added position relative */
             font-family: 'Inter', sans-serif;
             color: #ffffff;
             background: url('mac_mockup.png') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Changed alignment to left */
+            align-items: flex-start;
             justify-content: center;
             min-height: 100vh;
-            padding: 20px 0; /* Adjusted padding */
+            padding: 20px 0;
         }
 
         .content {
-            padding-left: 10%; /* Added left padding */
-            text-align: left; /* Changed text alignment to left */
+            padding-left: 10%;
+            text-align: left;
+            position: relative; /* Added position relative */
+            z-index: 1; /* Added z-index */
         }
 
         /* Overlay for better text visibility */
@@ -47,30 +47,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: -1;
+            background-color: rgba(0, 0, 0, 0.3); /* Reduced opacity */
+            z-index: 0; /* Set z-index to 0 */
         }
 
         /* Logo and Name */
         .logo {
-            font-size: 16px; /* Reduced font size */
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 40px; /* Increased space below */
+            margin-bottom: 40px;
             display: flex;
             align-items: center;
         }
 
         .logo i {
             margin-right: 10px;
-            color: #efefef; /* Changed icon color */
-            font-size: 16px; /* Adjusted icon size */
+            color: #efefef;
+            font-size: 16px;
         }
 
         /* Hero Statement */
         .hero {
             font-size: 32px;
-            font-weight: 600; /* Increased font weight */
-            margin-bottom: 20px;
+            font-weight: 600;
+            margin-bottom: 40px; /* Increased margin-bottom */
             max-width: 800px;
         }
 
@@ -83,6 +83,14 @@
 
         .key-statements p {
             margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .key-statements i {
+            margin-right: 10px;
+            color: #efefef;
+            font-size: 18px;
         }
 
         /* Buttons */
@@ -119,7 +127,7 @@
             }
 
             .logo {
-                font-size: 16px; /* Ensured consistency on smaller screens */
+                font-size: 16px;
             }
         }
     </style>
@@ -140,9 +148,9 @@
 
         <!-- Key Statements -->
         <div class="key-statements">
-            <p>In-context guidance for customer conversations</p>
-            <p>Identify patterns with super tags</p>
-            <p>Effortlessly integrate with your workflow using markdown docs</p>
+            <p><i class="fa-solid fa-comments"></i> In-context guidance for customer conversations</p>
+            <p><i class="fa-solid fa-tags"></i> Identify patterns with super tags</p>
+            <p><i class="fa-solid fa-file-code"></i> Effortlessly integrate with your workflow using markdown docs</p>
         </div>
 
         <!-- Buttons -->
