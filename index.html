@@ -22,7 +22,7 @@
             document.head.appendChild(faLink);
         }
     </script>
-    <title>Hunch</title>
+    <title>Hunch Support</title>
     <style>
         /* [Your existing styles remain unchanged up to this point] */
         body {
@@ -30,7 +30,7 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Changed to flex-start for better layout */
             flex-direction: column;
             min-height: 100vh;
             background-color: #212121;
@@ -43,7 +43,7 @@
 
         h1 {
             font-size: 36px;
-            margin: 0;
+            margin: 20px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -64,7 +64,7 @@
 
         /* Hero Image Styling */
         .hero-image {
-            margin: 40px 0;
+            margin: 20px 0;
         }
 
         .hero-image img {
@@ -86,10 +86,114 @@
             margin: 15px 0;
         }
 
+        /* Support Section Styling */
+        .support-section {
+            max-width: 800px;
+            width: 100%;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .support-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .support-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .support-section label {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .support-section input,
+        .support-section textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #b0b0b0;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: #2a2a2a;
+            color: #efefef;
+        }
+
+        .support-section button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            background-color: #efefef;
+            color: #212121;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .support-section button:hover {
+            background-color: #d4d4d4;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            max-width: 800px;
+            width: 100%;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .faq-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 20px;
+            color: #ffffff;
+            cursor: pointer;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .faq-item h3::after {
+            content: '\f078'; /* Font Awesome down arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .faq-item.active h3::after {
+            content: '\f077'; /* Font Awesome up arrow */
+        }
+
+        .faq-item p {
+            display: none;
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* Buttons */
         .buttons {
             display: flex;
             gap: 15px;
             margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .buttons a {
@@ -120,30 +224,71 @@
                 width: 100%;
                 box-sizing: border-box;
             }
+
+            .support-section,
+            .faq-section {
+                padding: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1><i class="fa-solid fa-bolt"></i> hunch</h1>
-    <p class="subtitle">Learn how to talk to customers and make something they want</p>
+    <h1><i class="fa-solid fa-bolt"></i> Hunch Support</h1>
+    <p class="subtitle">We're here to help you make the most of Hunch</p>
 
-    <!-- Hero Image Section -->
-    <div class="hero-image">
-        <img src="mac_mockup.png" alt="Hunch app displayed on a MacBook">
+    <!-- Support Section -->
+    <div class="support-section">
+        <h2>Contact Support</h2>
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
-    <!-- Key Statements -->
-    <div class="key-statements">
-        <p>In-context guidance for customer conversations</p>
-        <p>Discover patterns with super tags</p>
-        <p>Effortlessly integrate with your workflow using markdown docs</p>
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>How do I install Hunch on my Mac?</h3>
+            <p>Download the app from the Mac App Store, then follow the on-screen instructions to install it.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I sync Hunch across multiple devices?</h3>
+            <p>Yes, Hunch supports synchronization across all your devices using your iCloud account.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I reset my password?</h3>
+            <p>If you need to reset your password, go to the login page and click on "Forgot Password" to receive reset instructions via email.</p>
+        </div>
+
+        <!-- Add more FAQ items as needed -->
     </div>
 
     <!-- Buttons -->
     <div class="buttons">
         <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
-        <a href="mailto:your-email@example.com?subject=Hunch%20App%20Inquiry">Get in Touch</a>
-        <a href="mailto:support@example.com?subject=Hunch%20App%20Support">Support</a>
+        <a href="#top">Back to Top</a>
     </div>
+
+    <!-- JavaScript for FAQ Toggle -->
+    <script>
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
