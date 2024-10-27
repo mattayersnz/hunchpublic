@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- [Your existing head content remains unchanged] -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hunch - macOS app">
+    <meta description="Hunch - macOS app">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <!-- Updated Font Awesome CDN for Bolt Icon -->
     <link
@@ -23,6 +24,7 @@
     </script>
     <title>Hunch</title>
     <style>
+        /* [Your existing styles remain unchanged up to this point] */
         body {
             margin: 0;
             padding: 0;
@@ -51,7 +53,7 @@
         h1 i {
             margin-right: 10px;
             font-size: 36px;
-            color: #efefef !important; /* Ensures color is applied */
+            color: #efefef !important;
         }
 
         p.subtitle {
@@ -60,45 +62,28 @@
             margin: 10px 0 30px;
         }
 
-        .screenshots {
-            display: flex;
-            gap: 20px;
-            margin: 20px 0;
-            width: 95%; 
-            max-width: 1200px;
-            justify-content: center;
-            flex-wrap: wrap;
+        /* Hero Image Styling */
+        .hero-image {
+            margin: 40px 0;
         }
 
-        .screenshots img {
-            width: 45%;
+        .hero-image img {
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
-        .features {
+        /* Key Statements Styling */
+        .key-statements {
             max-width: 800px;
             margin: 20px 0;
         }
 
-        .features h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .feature-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
+        .key-statements p {
+            font-size: 20px;
             color: #b0b0b0;
-            margin: 0;
-        }
-
-        .feature-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #3a3a3a;
+            margin: 15px 0;
         }
 
         .buttons {
@@ -125,15 +110,6 @@
 
         /* Responsive layout for smaller screens */
         @media (max-width: 600px) {
-            .screenshots {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .screenshots img {
-                width: 95%;
-            }
-
             .buttons {
                 flex-direction: column;
                 gap: 10px;
@@ -151,22 +127,23 @@
     <h1><i class="fa-solid fa-bolt"></i> hunch</h1>
     <p class="subtitle">Learn how to talk to customers and make something they want</p>
 
-    <div class="screenshots">
-        <img src="./hunch1.png" alt="Screenshot of the hunch app showing the markdown editor and guide">
-        <img src="./hunch2.png" alt="Screenshot of hunch app showing quotes captured in a document">
-    </div>
-    <div class="features">
-        <h2>Key Features</h2>
-        <ul class="feature-list">
-            <li>Get in-context guidance on talking to customers</li>
-            <li>Create super tags from patterns about what customers say</li>
-            <li>Create and edit markdown docs to easily work with other tools</li>
-        </ul>
+    <!-- Hero Image Section -->
+    <div class="hero-image">
+        <img src="mac_mockup.png" alt="Hunch app displayed on a MacBook">
     </div>
 
+    <!-- Key Statements -->
+    <div class="key-statements">
+        <p>In-context guidance for customer conversations</p>
+        <p>Discover patterns with super tags</p>
+        <p>Effortlessly integrate with your workflow using markdown docs</p>
+    </div>
+
+    <!-- Buttons -->
     <div class="buttons">
         <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
         <a href="mailto:your-email@example.com?subject=Hunch%20App%20Inquiry">Get in Touch</a>
+        <a href="mailto:support@example.com?subject=Hunch%20App%20Support">Support</a>
     </div>
 </body>
 </html>
