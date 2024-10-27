@@ -29,11 +29,15 @@
             background-size: cover;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start; /* Changed alignment to left */
             justify-content: center;
             min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+            padding: 20px 0; /* Adjusted padding */
+        }
+
+        .content {
+            padding-left: 10%; /* Added left padding */
+            text-align: left; /* Changed text alignment to left */
         }
 
         /* Overlay for better text visibility */
@@ -49,22 +53,23 @@
 
         /* Logo and Name */
         .logo {
-            font-size: 48px;
+            font-size: 16px; /* Reduced font size */
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 40px; /* Increased space below */
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
         .logo i {
             margin-right: 10px;
-            color: #ffcc00; /* Accent color for the icon */
+            color: #efefef; /* Changed icon color */
+            font-size: 16px; /* Adjusted icon size */
         }
 
         /* Hero Statement */
         .hero {
             font-size: 32px;
+            font-weight: 600; /* Increased font weight */
             margin-bottom: 20px;
             max-width: 800px;
         }
@@ -85,14 +90,14 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .buttons a {
-            background-color: #6A27BF;
+            background-color: none;
             color: #efefef;
+            border: 2px solid #efefef;
             padding: 15px 30px;
-            border-radius: 8px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.3s ease;
@@ -114,7 +119,7 @@
             }
 
             .logo {
-                font-size: 36px;
+                font-size: 16px; /* Ensured consistency on smaller screens */
             }
         }
     </style>
@@ -122,27 +127,29 @@
 <body>
     <div class="overlay"></div>
 
-    <!-- Logo and Name -->
-    <div class="logo">
-        <i class="fa-solid fa-bolt"></i> Hunch
-    </div>
+    <div class="content">
+        <!-- Logo and Name -->
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i> Hunch
+        </div>
 
-    <!-- Hero Statement -->
-    <div class="hero">
-        Learn how to talk to customers and make something they want
-    </div>
+        <!-- Hero Statement -->
+        <div class="hero">
+            Learn how to talk to customers and make something they want
+        </div>
 
-    <!-- Key Statements -->
-    <div class="key-statements">
-        <p>In-context guidance for customer conversations</p>
-        <p>Identify patterns with super tags</p>
-        <p>Effortlessly integrate with your workflow using markdown docs</p>
-    </div>
+        <!-- Key Statements -->
+        <div class="key-statements">
+            <p>In-context guidance for customer conversations</p>
+            <p>Identify patterns with super tags</p>
+            <p>Effortlessly integrate with your workflow using markdown docs</p>
+        </div>
 
-    <!-- Buttons -->
-    <div class="buttons">
-        <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
-        <a href="support.html">Support</a>
+        <!-- Buttons -->
+        <div class="buttons">
+            <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">Check it out</a>
+            <a href="support.html">Support</a>
+        </div>
     </div>
 </body>
 </html>
