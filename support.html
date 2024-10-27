@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunch Support</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN for Icons -->
     <link
         rel="stylesheet"
@@ -29,7 +29,7 @@
             align-items: flex-start; /* Align items to the left */
             justify-content: flex-start;
             min-height: 100vh;
-            padding: 40px 0;
+            padding: 40px 20px; /* Reduced horizontal padding for better responsiveness */
         }
 
         .overlay {
@@ -44,7 +44,7 @@
 
         .content {
             width: 100%;
-            padding-left: 10%; /* Added 10% left padding */
+            padding-left: 10%; /* Retained for larger screens */
             padding-right: 10%;
             text-align: left; /* Align text to the left */
             position: relative; /* Added position relative */
@@ -81,24 +81,26 @@
         }
 
         .header .title {
-            font-size: 24px;
+            font-size: 28px; /* Increased font size for better visibility */
             color: #efefef;
             padding-bottom: 14px;
+            font-weight: 700; /* Heavier font weight */
         }
 
         .header .subtitle {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 16px; /* Reduced font size */
+            font-weight: 400; /* Lighter font weight */
             color: #efefef;
         }
 
         /* Support Form */
         .support-form {
-            width: 50%; /* Set to 30% on large screens */
+            width: 50%; /* Set to 50% on large screens */
             background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             margin-bottom: 30px;
+            padding: 20px; /* Added padding for better spacing */
         }
 
         .support-form form {
@@ -119,24 +121,30 @@
             border: 1px solid #b0b0b0;
             border-radius: 4px;
             font-size: 14px;
-            background-color: #3a3a3a;
+            background-color: transparent; /* Removed grey background */
             color: #efefef;
-            width: 100%;
+        }
+
+        .support-form input::placeholder,
+        .support-form textarea::placeholder {
+            color: #c0c0c0; /* Optional: Adjust placeholder color for better visibility */
         }
 
         .support-form button {
-            padding: 12px;
+            padding: 12px 20px; /* Added horizontal padding */
             border-radius: 4px;
-            background-color: none;
+            background-color: #efefef; /* Changed background color */
             border: 2px solid #efefef;
-            color: #efefef;
+            color: #212121; /* Changed text color */
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
+            align-self: flex-start; /* Align button to the start */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .support-form button:hover {
-            background-color: #efefef;
+            background-color: #d6d6d6; /* Slightly darker on hover */
             color: #212121;
         }
 
@@ -156,20 +164,55 @@
         }
 
         @media (max-width: 768px) {
-            .header .logo {
-                font-size: 16px;
+            body {
+                padding: 20px 10px; /* Adjust padding for smaller screens */
+            }
+
+            .content {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .header .title {
+                font-size: 24px;
             }
 
             .header .subtitle {
-                font-size: 16px;
-            }
-
-            .support-form h2 {
-                font-size: 24px;
+                font-size: 14px;
             }
 
             .support-form {
                 width: 90%; /* Set to 90% on small screens */
+                padding: 15px;
+            }
+
+            .support-form button {
+                width: auto;
+                align-self: center; /* Center the button on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header .title {
+                font-size: 20px;
+            }
+
+            .header .subtitle {
+                font-size: 13px;
+            }
+
+            .support-form label {
+                font-size: 14px;
+            }
+
+            .support-form input,
+            .support-form textarea {
+                font-size: 13px;
+            }
+
+            .support-form button {
+                font-size: 14px;
+                padding: 10px 16px;
             }
         }
     </style>
@@ -196,13 +239,13 @@
         <div class="support-form">
             <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="supportForm">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="_replyto" required>
+                <input type="email" id="email" name="_replyto" required placeholder="Your Email">
 
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
 
                 <button type="submit">Send</button>
             </form>
